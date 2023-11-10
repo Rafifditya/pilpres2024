@@ -5,10 +5,10 @@
         return mt_rand($st_num*$mul,$end_num*$mul)/$mul;
         }
      $array = array(
-        "0" => array('PASLON1' => rand_float(0,100)."",
-                    'PASLON2' => rand_float(0,100)."",
-                    'PASLON3'=> rand_float(0,100)."",
-                    'TOTAL'=> rand_float(0,100).""
+        "0" => array('PASLON1' => rand_float(0,100,3)."",
+                    'PASLON2' => rand_float(0,100,3)."",
+                    'PASLON3'=> rand_float(0,100,3)."",
+                    'TOTAL'=> rand_float(0,100,3).""
     ));
     $json = json_encode($array);
     echo $json;
