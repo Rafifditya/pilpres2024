@@ -1,11 +1,11 @@
     <?php 
-    
+        header('Content-Type: application/json'); 
         $array = array(
-            "0" => array('PASLON1' => rand_float(0,100)."",
+            'PASLON1' => rand_float(0,100)."",
                         'PASLON2' => rand_float(0,100)."",
                         'PASLON3'=> rand_float(0,100)."",
                         'TOTAL'=> rand_float(0,100).""
-        ));
+        );
         $json = json_encode($array);
         echo $json;
         function rand_float($st_num=0,$end_num=1,$mul=1000000)
