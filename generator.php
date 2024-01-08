@@ -195,4 +195,5 @@
    fwrite($survey3, getPartainaspron()->asXML());
    fclose($survey3);
 
+   echo "Generate Success";
 ?>
