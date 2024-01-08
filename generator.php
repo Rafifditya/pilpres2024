@@ -25,11 +25,15 @@
     $sisa = 100;
     $i = 0;
     while($i < 24){
-        $result = rand_float(0,$sisa);
-        // $array[]= $result;
-        $array[] = $result;
-        $sisa = $sisa - $result;
-        $i = $i+1;
+        if ($i == 23){
+            $result = rand_float(0,$sisa);
+        } else {
+            $result = rand_float(0,4);
+            // $array[]= $result;
+            $array[] = $result;
+            $sisa = $sisa - $result;
+            $i = $i+1;
+        }
     }
     return $array;
    }
@@ -42,8 +46,8 @@
     $item = $data->addChild('item');
     $item->addAttribute('type','dict');
     $item->addChild("paslon1_persen",$paslon_data['PASLON1'])->addAttribute('type','float');
-    $item->addChild("paslon1_persen",$paslon_data['PASLON1'])->addAttribute('type','float');
-    $item->addChild("paslon1_persen",$paslon_data['PASLON1'])->addAttribute('type','float');
+    $item->addChild("paslon2_persen",$paslon_data['PASLON2'])->addAttribute('type','float');
+    $item->addChild("paslon3_persen",$paslon_data['PASLON3'])->addAttribute('type','float');
     $item->addChild("totalpaslon_persen",rand_float(0,100))->addAttribute('type','float');
     $simplexml->addChild('created_at',date('Y-m-d H:i:s'))->addAttribute('type','str');
     return $simplexml;
@@ -60,8 +64,8 @@
             $item->addAttribute('type','dict');
             $item->addChild("nama_provinsi",$propinsi)->addAttribute('type','string');
             $item->addChild("paslon1_persen",$paslon_data['PASLON1'])->addAttribute('type','float');
-            $item->addChild("paslon1_persen",$paslon_data['PASLON1'])->addAttribute('type','float');
-            $item->addChild("paslon1_persen",$paslon_data['PASLON1'])->addAttribute('type','float');
+            $item->addChild("paslon2_persen",$paslon_data['PASLON2'])->addAttribute('type','float');
+            $item->addChild("paslon3_persen",$paslon_data['PASLON3'])->addAttribute('type','float');
             $item->addChild("totalpaslon_persen",rand_float(0,100))->addAttribute('type','float');
         }
         $simplexml->addChild('created_at',date('Y-m-d H:i:s'))->addAttribute('type','str');
