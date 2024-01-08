@@ -1,2 +1,2 @@
 <?xml version="1.0"?>
-<root><data type="list"><item type="dict"><paslon1_persen type="float">73.653151</paslon1_persen><paslon1_persen type="float">73.653151</paslon1_persen><paslon1_persen type="float">73.653151</paslon1_persen><totalpaslon_persen type="float">22.587494</totalpaslon_persen></item></data><created_at type="str">2024-01-08 11:59:17</created_at></root>
+<root><data type="list"><item type="dict"><paslon1_persen type="float">55.8</paslon1_persen><paslon2_persen type="float">23.2</paslon2_persen><paslon3_persen type="float">21</paslon3_persen><totalpaslon_persen type="float">14.1</totalpaslon_persen></item></data><created_at type="str">2024-01-08 13:01:20</created_at></root>

@@ -1,5 +1,5 @@
 <?php 
-    function rand_float($st_num=0,$end_num=1,$mul=1000000){
+    function rand_float($st_num=0,$end_num=1,$mul=10){
         if ($st_num>$end_num){
             return false;
         }
@@ -18,7 +18,7 @@
                     'PASLON1' => $paslon1,
                     'PASLON2' => $paslon2,
                     'PASLON3'=> $paslon3,
-                    'TOTAL'=> rand_float(0,100).""
+                    'TOTAL'=> rand_float(40,100).""
     );
     return $array;
    }
