@@ -13,7 +13,7 @@
     $sisa  = $sisa - $paslon1;
     $paslon2 = rand_float(0,$sisa);
     $sisa  = $sisa - $paslon2;
-    $paslon3 = rand_float(0,$sisa);
+    $paslon3 = $sisa;
     $array = array(
                     'PASLON1' => $paslon1,
                     'PASLON2' => $paslon2,
