@@ -8,9 +8,12 @@
 
 
    function rand_paslon(){
-    $paslon1 = rand_float(0,100);
-    $paslon2 = rand_float(0,(100-$paslon1));
-    $paslon3 = rand_float(0,$paslon2);
+    $sisa = 100;
+    $paslon1 = rand_float(0,$sisa);
+    $sisa  = $sisa - $paslon1;
+    $paslon2 = rand_float(0,$sisa);
+    $sisa  = $sisa - $paslon2;
+    $paslon3 = rand_float(0,$sisa);
     $array = array(
                     'PASLON1' => $paslon1,
                     'PASLON2' => $paslon2,
@@ -27,7 +30,7 @@
     while($i < 24){
         if ($i == 23){
             $result = rand_float(0,$sisa);
-            $array[] = $result;
+            $array[] = $sisa;
         } else {
             $result = rand_float(0,4);
             $array[] = $result;
