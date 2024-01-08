@@ -27,13 +27,13 @@
     while($i < 24){
         if ($i == 23){
             $result = rand_float(0,$sisa);
+            $array[] = $result;
         } else {
             $result = rand_float(0,4);
-            // $array[]= $result;
             $array[] = $result;
             $sisa = $sisa - $result;
-            $i = $i+1;
         }
+        $i = $i+1;
     }
     return $array;
    }
