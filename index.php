@@ -57,6 +57,8 @@
   .btn-persen {
     padding-left: 50px;
     padding-right: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 
   p {
@@ -106,22 +108,22 @@
     <img src="charta.png" class="img-survey">
     </div> 
   <div class="col text-center persen" style="padding-left:85px;">
-    <button class="btn btn-primary btn-persen">
+    <button class="btn btn-dark btn-persen">
       <?php echo $xml->data->item->paslon1_persen ?>%
       </button>
     </div>
     <div class="col text-center persen">
-      <button class="btn btn-primary btn-persen">
+      <button class="btn btn-dark btn-persen">
         <?php echo $xml->data->item->paslon2_persen ?>%
       </button>
     </div>
     <div class="col text-center persen">
-    <button class="btn btn-primary btn-persen">
+    <button class="btn btn-dark btn-persen">
         <?php echo $xml->data->item->paslon3_persen ?>%
       </button>
     </div>
     <div class="col text-center persen">
-    <button class="btn btn-primary btn-persen">
+    <button class="btn btn-dark btn-persen">
         <?php echo $xml->data->item->totalpaslon_persen ?>%
       </button>
     </div>
@@ -133,22 +135,22 @@
     <img src="indikator.png" class="img-survey">
     </div> 
   <div class="col text-center persen" style="padding-left:85px;">
-    <button class="btn btn-primary btn-persen">
+    <button class="btn btn-dark btn-persen">
       <?php echo $xml->data->item->paslon1_persen ?>%
       </button>
     </div>
     <div class="col text-center persen">
-      <button class="btn btn-primary btn-persen">
+      <button class="btn btn-dark btn-persen">
         <?php echo $xml->data->item->paslon2_persen ?>%
       </button>
     </div>
     <div class="col text-center persen">
-    <button class="btn btn-primary btn-persen">
+    <button class="btn btn-dark btn-persen">
         <?php echo $xml->data->item->paslon3_persen ?>%
       </button>
     </div>
     <div class="col text-center persen">
-    <button class="btn btn-primary btn-persen">
+    <button class="btn btn-dark btn-persen">
         <?php echo $xml->data->item->totalpaslon_persen ?>%
       </button>
     </div>
@@ -160,22 +162,22 @@
     <img src="v1_20.png" class="img-survey">
     </div> 
   <div class="col text-center persen" style="padding-left:85px;">
-    <button class="btn btn-primary btn-persen">
+    <button class="btn btn-dark btn-persen">
       <?php echo $xml->data->item->paslon1_persen ?>%
       </button>
     </div>
     <div class="col text-center persen">
-      <button class="btn btn-primary btn-persen">
+      <button class="btn btn-dark btn-persen">
         <?php echo $xml->data->item->paslon2_persen ?>%
       </button>
     </div>
     <div class="col text-center persen">
-    <button class="btn btn-primary btn-persen">
+    <button class="btn btn-dark btn-persen">
         <?php echo $xml->data->item->paslon3_persen ?>%
       </button>
     </div>
     <div class="col text-center persen">
-    <button class="btn btn-primary btn-persen">
+    <button class="btn btn-dark btn-persen">
         <?php echo $xml->data->item->totalpaslon_persen ?>%
       </button>
     </div>

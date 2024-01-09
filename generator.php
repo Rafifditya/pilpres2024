@@ -1,5 +1,5 @@
 <?php 
-    function rand_float($st_num=0,$end_num=1,$mul=10){
+    function rand_float($st_num=0,$end_num=1,$mul=100){
         if ($st_num>$end_num){
             return false;
         }
@@ -50,7 +50,7 @@
     $item->addChild("paslon1_persen",$paslon_data['PASLON1'])->addAttribute('type','float');
     $item->addChild("paslon2_persen",$paslon_data['PASLON2'])->addAttribute('type','float');
     $item->addChild("paslon3_persen",$paslon_data['PASLON3'])->addAttribute('type','float');
-    $item->addChild("totalpaslon_persen",rand_float(0,100))->addAttribute('type','float');
+    $item->addChild("totalpaslon_persen",rand_float(40,100))->addAttribute('type','float');
     $simplexml->addChild('created_at',date('Y-m-d H:i:s'))->addAttribute('type','str');
     return $simplexml;
      }
