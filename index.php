@@ -7,139 +7,180 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </head>
+<style>
+  body {
+    background-image: url(bg-blue-white.png);
+    background-size: 100%;
+  }
+  .paslon {
+    float: right;
+    width: 70%;
+    padding-top: 180px;
+  }
+
+  .suara-paslon {
+    float: right;
+    width: 98%;
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 10px;
+  }
+
+  .img-paslon{
+    width: 150px;
+    height: 90px;
+  }
+
+
+  .img-survey{
+    width: 100px;
+    height: 60px;
+    padding-top: 0px;
+  }
+
+  .total-suara {
+    padding-top: 112px;
+    padding-right: 40px;
+  }
+
+  .suara-persen{
+    padding-left: 110px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .persen {
+    padding-top: 20px;
+  }
+
+  .btn-persen {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  p {
+    color:white
+  }
+  
+</style>
 <body>
 <main>
-  <h1 class="visually-hidden">Features examples</h1>
-
-  <div class="container px-4 py-5">
-    <h2 class="pb-2 border-bottom">Quickcount 2024</h2>
-
-    <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
-      <div class="col d-flex flex-column align-items-start gap-2">
-        <h2 class="fw-bold text-body-emphasis">Charta Politika</h2>
-        <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-      </div>
-        <?php $xml=simplexml_load_file("survey1/pilpres_nasional.xml") or die("Error: Cannot create object"); ?>
-      <div class="col">
-        <div class="row row-cols-1 row-cols-sm-2 g-4">
-          <div class="col d-flex flex-column gap-2">
-            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                <a href="#" class="btn btn-lg text-white"><?php echo $xml->data->item->paslon1_persen ?>%</a>
-            </div>
-            <h4 class="fw-semibold mb-0 text-body-emphasis">1. Anies Baswedan - Muhaimin Iskandar</h4>
-            <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
-          </div>
-
-          <div class="col d-flex flex-column gap-2">
-            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                <a href="#" class="btn btn-lg text-white"><?php echo $xml->data->item->paslon2_persen ?>%</a>
-            </div>
-            <h4 class="fw-semibold mb-0 text-body-emphasis">2. Prabowo Subianto - Gibran Rakabuming</h4>
-            <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
-          </div>
-
-          <div class="col d-flex flex-column gap-2">
-            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-              <a href="#" class="btn btn-lg text-white"><?php echo $xml->data->item->paslon3_persen ?>%</a>
-            </div>
-            <h4 class="fw-semibold mb-0 text-body-emphasis">3. Ganjar Pranowo - Mahfud MD</h4>
-            <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
-          </div>
-
-          <div class="col d-flex flex-column gap-2">
-            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-              <a href="#" class="btn btn-lg text-white"><?php echo $xml->data->item->totalpaslon_persen ?>%</a>
-            </div>
-            <h4 class="fw-semibold mb-0 text-body-emphasis">Total Suara Masuk</h4>
-            <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
-          </div>
-        </div>
-      </div>
+  <div class="container-fluid">
+  <div class="row paslon">
+    <div class="col text-center">
+      <img src="v1_10.png" class="img-paslon">
+      <br>
+      <br>
+      <p><b>Annies Baswedan
+      <br>
+      Muhaimin Iskandar</b>
+    </p>
     </div>
-    <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
-      <div class="col d-flex flex-column align-items-start gap-2">
-        <h2 class="fw-bold text-body-emphasis">INDIKATOR</h2>
-        <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-      </div>
-        <?php $xml=simplexml_load_file("survey2/pilpres_nasional.xml") or die("Error: Cannot create object"); ?>
-      <div class="col">
-        <div class="row row-cols-1 row-cols-sm-2 g-4">
-          <div class="col d-flex flex-column gap-2">
-            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                <a href="#" class="btn btn-lg text-white"><?php echo $xml->data->item->paslon1_persen ?>%</a>
-            </div>
-            <h4 class="fw-semibold mb-0 text-body-emphasis">1. Anies Baswedan - Muhaimin Iskandar</h4>
-            <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
-          </div>
-
-          <div class="col d-flex flex-column gap-2">
-            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                <a href="#" class="btn btn-lg text-white"><?php echo $xml->data->item->paslon2_persen ?>%</a>
-            </div>
-            <h4 class="fw-semibold mb-0 text-body-emphasis">2. Prabowo Subianto - Gibran Rakabuming</h4>
-            <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
-          </div>
-
-          <div class="col d-flex flex-column gap-2">
-            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-              <a href="#" class="btn btn-lg text-white"><?php echo $xml->data->item->paslon3_persen ?>%</a>
-            </div>
-            <h4 class="fw-semibold mb-0 text-body-emphasis">3. Ganjar Pranowo - Mahfud MD</h4>
-            <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
-          </div>
-
-          <div class="col d-flex flex-column gap-2">
-            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-              <a href="#" class="btn btn-lg text-white"><?php echo $xml->data->item->totalpaslon_persen ?>%</a>
-            </div>
-            <h4 class="fw-semibold mb-0 text-body-emphasis">Total Suara Masuk</h4>
-            <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
-          </div>
-        </div>
-      </div>
+    <div class="col text-center">
+      <img src="v1_9.png" class="img-paslon">
+      <br>
+      <br>
+      <p><b>Prabowo Subianto
+      <br>
+      Gibran Rakabuming</b>
+    </p>
     </div>
-    <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
-      <div class="col d-flex flex-column align-items-start gap-2">
-        <h2 class="fw-bold text-body-emphasis">SMRC</h2>
-        <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-      </div>
-        <?php $xml=simplexml_load_file("survey3/pilpres_nasional.xml") or die("Error: Cannot create object"); ?>
-      <div class="col">
-        <div class="row row-cols-1 row-cols-sm-2 g-4">
-          <div class="col d-flex flex-column gap-2">
-            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                <a href="#" class="btn btn-lg text-white"><?php echo $xml->data->item->paslon1_persen ?>%</a>
-            </div>
-            <h4 class="fw-semibold mb-0 text-body-emphasis">1. Anies Baswedan - Muhaimin Iskandar</h4>
-            <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
-          </div>
-
-          <div class="col d-flex flex-column gap-2">
-            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                <a href="#" class="btn btn-lg text-white"><?php echo $xml->data->item->paslon2_persen ?>%</a>
-            </div>
-            <h4 class="fw-semibold mb-0 text-body-emphasis">2. Prabowo Subianto - Gibran Rakabuming</h4>
-            <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
-          </div>
-
-          <div class="col d-flex flex-column gap-2">
-            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-              <a href="#" class="btn btn-lg text-white"><?php echo $xml->data->item->paslon3_persen ?>%</a>
-            </div>
-            <h4 class="fw-semibold mb-0 text-body-emphasis">3. Ganjar Pranowo - Mahfud MD</h4>
-            <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
-          </div>
-
-          <div class="col d-flex flex-column gap-2">
-            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-              <a href="#" class="btn btn-lg text-white"><?php echo $xml->data->item->totalpaslon_persen ?>%</a>
-            </div>
-            <h4 class="fw-semibold mb-0 text-body-emphasis">Total Suara Masuk</h4>
-            <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
-          </div>
-        </div>
-      </div>
+    <div class="col text-center">
+      <img src="v1_8.png" class="img-paslon">
+      <br>
+      <br>
+      <p><b>Ganjar Pranowo
+      <br>
+      Mahfud MD</b>
+    </p>
     </div>
+    <div class="col text-center total-suara">
+      <p><b>Total Suara </b></p>
+    </div>
+  </div>
+
+  <div class="row suara-paslon bg-white rounded-pill">
+      <?php $xml=simplexml_load_file("survey1/pilpres_nasional.xml") or die("Error: Cannot create object"); ?>
+  <div class="col suara-persen">
+    <img src="charta.png" class="img-survey">
+    </div> 
+  <div class="col text-center persen" style="padding-left:85px;">
+    <button class="btn btn-primary btn-persen">
+      <?php echo $xml->data->item->paslon1_persen ?>%
+      </button>
+    </div>
+    <div class="col text-center persen">
+      <button class="btn btn-primary btn-persen">
+        <?php echo $xml->data->item->paslon2_persen ?>%
+      </button>
+    </div>
+    <div class="col text-center persen">
+    <button class="btn btn-primary btn-persen">
+        <?php echo $xml->data->item->paslon3_persen ?>%
+      </button>
+    </div>
+    <div class="col text-center persen">
+    <button class="btn btn-primary btn-persen">
+        <?php echo $xml->data->item->totalpaslon_persen ?>%
+      </button>
+    </div>
+  </div>
+
+  <div class="row suara-paslon bg-white rounded-pill">
+      <?php $xml=simplexml_load_file("survey2/pilpres_nasional.xml") or die("Error: Cannot create object"); ?>
+  <div class="col suara-persen">
+    <img src="indikator.png" class="img-survey">
+    </div> 
+  <div class="col text-center persen" style="padding-left:85px;">
+    <button class="btn btn-primary btn-persen">
+      <?php echo $xml->data->item->paslon1_persen ?>%
+      </button>
+    </div>
+    <div class="col text-center persen">
+      <button class="btn btn-primary btn-persen">
+        <?php echo $xml->data->item->paslon2_persen ?>%
+      </button>
+    </div>
+    <div class="col text-center persen">
+    <button class="btn btn-primary btn-persen">
+        <?php echo $xml->data->item->paslon3_persen ?>%
+      </button>
+    </div>
+    <div class="col text-center persen">
+    <button class="btn btn-primary btn-persen">
+        <?php echo $xml->data->item->totalpaslon_persen ?>%
+      </button>
+    </div>
+  </div>
+
+  <div class="row suara-paslon bg-white rounded-pill">
+      <?php $xml=simplexml_load_file("survey3/pilpres_nasional.xml") or die("Error: Cannot create object"); ?>
+  <div class="col suara-persen">
+    <img src="v1_20.png" class="img-survey">
+    </div> 
+  <div class="col text-center persen" style="padding-left:85px;">
+    <button class="btn btn-primary btn-persen">
+      <?php echo $xml->data->item->paslon1_persen ?>%
+      </button>
+    </div>
+    <div class="col text-center persen">
+      <button class="btn btn-primary btn-persen">
+        <?php echo $xml->data->item->paslon2_persen ?>%
+      </button>
+    </div>
+    <div class="col text-center persen">
+    <button class="btn btn-primary btn-persen">
+        <?php echo $xml->data->item->paslon3_persen ?>%
+      </button>
+    </div>
+    <div class="col text-center persen">
+    <button class="btn btn-primary btn-persen">
+        <?php echo $xml->data->item->totalpaslon_persen ?>%
+      </button>
+    </div>
+  </div>
+
   </div>
 </main>
 
