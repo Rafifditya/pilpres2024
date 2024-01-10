@@ -62,7 +62,18 @@
 
   b {
     font-size: 1.1rem;
-  }  
+  }
+  
+  .update-stats{
+    float: right;
+    width: 37%;
+    padding-top: 2px;
+    padding-left: 10px;
+    padding-bottom: 2px;
+    margin-top: 5px;
+    margin-left: 5px;
+  }
+
 
   .btn-persen {
     width: 175px;
@@ -77,6 +88,17 @@
 </style>
 <body>
 <main>
+  <div class="update-stats bg-dark rounded-pill">
+  <div class="spinner-border spinner-border-sm text-success"  role="status">
+</div>
+<div class="spinner-grow spinner-grow-sm text-success" role="status">
+</div>
+    <span class="sr-only text-white" style="margin-left:5px; font-size:0.8rem; font-family:sans-serif;">Last Update : <span id="timestamp"></span> </span>
+  </div>
+
+    <span id="version" class="sr-only text-white" style="margin-left:5px; font-size:0.7rem; font-family:sans-serif;">Version :  </span>
+
+
   <div class="container-fluid">
   <div class="row paslon">
   <div class="col text-center">
@@ -85,7 +107,7 @@
       <img src="image/anies.png" class="img-paslon">
       <br>
       <br>
-      <p><b>Annies Baswedan
+      <p><b>Anies Baswedan
       <br>
       Muhaimin Iskandar</b>
     </p>
@@ -283,8 +305,14 @@ function loadData(){
   loadSurvey3();
 }
 
+function timestamp(){
+  document.getElementById("timestamp").innerText = new Date(Date.now());
+}
+
+document.getElementById("version").innerText = "Version: 1.01";
 setInterval(() => {
   loadData();
+  timestamp();
 }, 1000);
 
 </script>
