@@ -11,18 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </head>
 <style>
-  html {
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-    --web-scale-to-fit: true;
-    --web-scale-on-resize: true;
-    --web-refresh-for-changes: true;
-    --web-enable-deep-linking: true;
-  }
+ 
   body {
     background-image: url(image/bg-qc.png);
     background-size: 100%;
@@ -32,6 +21,10 @@
   .paslon {
     float: right;
     padding-top: 180px;
+    width: 98%;
+    margin-left: 10px;
+    margin-right: 10px;
+
   }
 
   .suara-paslon {
@@ -43,8 +36,8 @@
   }
 
   .img-paslon{
-    width: 70%;
-    height: 55%;
+    width: 55%;
+    height: 45%;
   }
 
 
@@ -55,8 +48,7 @@
   }
 
   .total-suara {
-    padding-top: 170px;
-    padding-right: 40px;
+    padding-top: 120px;
   }
 
   .suara-persen{
@@ -73,7 +65,7 @@
   }  
 
   .btn-persen {
-    width: 150px;
+    width: 175px;
     padding-top: 10px;
     padding-bottom: 10px;
   }
@@ -87,7 +79,9 @@
 <main>
   <div class="container-fluid">
   <div class="row paslon">
-    <div class="col text-center">
+  <div class="col text-center">
+    </div>
+    <div class="col text-center" style="padding-left: 85px;">
       <img src="image/anies.png" class="img-paslon">
       <br>
       <br>
@@ -124,7 +118,7 @@
   <div class="col text-center suara-persen">
     <img src="image/charta.png" class="img-survey">
     </div> 
-  <div class="col text-center persen" style="padding-left:85px;">
+  <div class="col text-center persen" style="padding-left:90px;">
     <button class="btn btn-dark btn-persen rounded-pill">
       <b><?php echo $xml->data->item->paslon1_persen ?>%</b>
       </button>
@@ -151,7 +145,7 @@
   <div class="col text-center suara-persen">
     <img src="image/indikator.png" class="img-survey">
     </div> 
-  <div class="col text-center persen" style="padding-left:85px;">
+  <div class="col text-center persen" style="padding-left:90px;">
     <button class="btn btn-dark btn-persen rounded-pill">
       <b><?php echo $xml->data->item->paslon1_persen ?>%</b>
       </button>
@@ -178,7 +172,7 @@
   <div class="col text-center suara-persen">
     <img src="image/v1_20.png" class="img-survey">
     </div> 
-  <div class="col text-center persen" style="padding-left:85px;">
+  <div class="col text-center persen" style="padding-left:90px;">
     <button class="btn btn-dark btn-persen rounded-pill">
       <b><?php echo $xml->data->item->paslon1_persen ?>%</b>
       </button>
@@ -205,11 +199,5 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-<script>
-  var scale = 'scale(1)';
-document.body.style.webkitTransform =  scale;    // Chrome, Opera, Safari
- document.body.style.msTransform =   scale;       // IE 9
- document.body.style.transform = scale;     // General
-</script>
 </body>
 </html>
