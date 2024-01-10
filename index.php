@@ -48,7 +48,7 @@
   }
 
   .total-suara {
-    padding-top: 120px;
+    padding-top: 112px;
   }
 
   .suara-persen{
@@ -109,7 +109,7 @@
     </p>
     </div>
     <div class="col text-center total-suara">
-      <p><b>Total Suara </b></p>
+      <p><b>Total Suara <br> Masuk</b></p>
     </div>
   </div>
 
