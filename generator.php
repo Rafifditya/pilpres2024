@@ -9,9 +9,9 @@
 
    function rand_paslon(){
     $sisa = 100;
-    $paslon1 = rand_float(0,$sisa-40);
+    $paslon1 = rand_float(10,$sisa-40);
     $sisa  = $sisa - $paslon1;
-    $paslon2 = rand_float(0,$sisa);
+    $paslon2 = rand_float(10,$sisa);
     $sisa  = $sisa - $paslon2;
     $paslon3 = $sisa;
     $array = array(
@@ -31,7 +31,7 @@
         if ($i == 23){
             $array[] = $sisa;
         } else {
-            $result = rand_float(0,4);
+            $result = rand_float(1,4);
             $array[] = $result;
             $sisa = $sisa - $result;
         }
