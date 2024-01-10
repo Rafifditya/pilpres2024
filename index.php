@@ -11,12 +11,23 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </head>
 <style>
-  html {height:100%; width:100%; margin:0px; padding:0px;}
+  html {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    --web-scale-to-fit: true;
+    --web-scale-on-resize: true;
+    --web-refresh-for-changes: true;
+    --web-enable-deep-linking: true;
+  }
   body {
-    height:100%; width:100%; margin:0px; padding:0px;
     background-image: url(image/bg-qc.png);
     background-size: 100%;
     font-family: 'Poppins', sans-serif;
+   position: absolute;
   }
   .paslon {
     float: right;
