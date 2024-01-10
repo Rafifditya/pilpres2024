@@ -114,92 +114,179 @@
   </div>
 
   <div class="row suara-paslon bg-white rounded-pill">
-      <?php $xml=simplexml_load_file("survey1/pilpres_nasional.xml") or die("Error: Cannot create object"); ?>
   <div class="col text-center suara-persen">
     <img src="image/charta.png" class="img-survey">
     </div> 
   <div class="col text-center persen" style="padding-left:90px;">
     <button class="btn btn-dark btn-persen rounded-pill">
-      <b><?php echo $xml->data->item->paslon1_persen ?>%</b>
+    <div class="spinner-border text-light" id="loadingsurvey1paslon1" role="status"></div>
+      <b id="survey1paslon1"></b>
       </button>
     </div>
     <div class="col text-center persen rounded-pill">
       <button class="btn btn-dark btn-persen rounded-pill">
-        <b><?php echo $xml->data->item->paslon2_persen ?>%</b>
+        <div class="spinner-border text-light" id="loadingsurvey1paslon2" role="status"></div>
+
+        <b id="survey1paslon2"></b>
       </button>
     </div>
     <div class="col text-center persen rounded-pills">
     <button class="btn btn-dark btn-persen rounded-pill">
-        <b><?php echo $xml->data->item->paslon3_persen ?>%</b>
+      <div class="spinner-border text-light" id="loadingsurvey1paslon3" role="status"></div>
+
+        <b id="survey1paslon3"></b>
       </button>
     </div>
     <div class="col text-center persen">
     <button class="btn btn-dark btn-persen rounded-pill">
-        <b><?php echo $xml->data->item->totalpaslon_persen ?>%</b>
+      <div class="spinner-border text-light" id="loadingsurvey1total" role="status"></div>
+        <b id="survey1total"></b>
       </button>
     </div>
   </div>
 
   <div class="row suara-paslon bg-white rounded-pill">
-      <?php $xml=simplexml_load_file("survey2/pilpres_nasional.xml") or die("Error: Cannot create object"); ?>
   <div class="col text-center suara-persen">
     <img src="image/indikator.png" class="img-survey">
     </div> 
   <div class="col text-center persen" style="padding-left:90px;">
     <button class="btn btn-dark btn-persen rounded-pill">
-      <b><?php echo $xml->data->item->paslon1_persen ?>%</b>
+    <div class="spinner-border text-light" id="loadingsurvey2paslon1" role="status"></div>
+      <b id="survey2paslon1"></b>
       </button>
     </div>
     <div class="col text-center persen">
       <button class="btn btn-dark btn-persen rounded-pill">
-       <b> <?php echo $xml->data->item->paslon2_persen ?>%</b>
+    <div class="spinner-border text-light" id="loadingsurvey2paslon2" role="status"></div>
+        <b id="survey2paslon2"></b>
       </button>
     </div>
     <div class="col text-center persen">
     <button class="btn btn-dark btn-persen rounded-pill">
-       <b> <?php echo $xml->data->item->paslon3_persen ?>%</b>
+    <div class="spinner-border text-light" id="loadingsurvey2paslon3" role="status"></div>
+    <b id="survey2paslon3"></b>
       </button>
     </div>
     <div class="col text-center persen">
     <button class="btn btn-dark btn-persen rounded-pill">
-        <b><?php echo $xml->data->item->totalpaslon_persen ?>%</b>
+    <div class="spinner-border text-light" id="loadingsurvey2total" role="status"></div>
+        <b id="survey2total"></b>
       </button>
     </div>
   </div>
 
   <div class="row suara-paslon bg-white rounded-pill">
-      <?php $xml=simplexml_load_file("survey3/pilpres_nasional.xml") or die("Error: Cannot create object"); ?>
   <div class="col text-center suara-persen">
     <img src="image/v1_20.png" class="img-survey">
     </div> 
   <div class="col text-center persen" style="padding-left:90px;">
     <button class="btn btn-dark btn-persen rounded-pill">
-      <b><?php echo $xml->data->item->paslon1_persen ?>%</b>
+    <div class="spinner-border text-light" id="loadingsurvey3paslon1" role="status"></div>
+      <b id="survey3paslon1"></b>
       </button>
     </div>
     <div class="col text-center persen">
       <button class="btn btn-dark btn-persen rounded-pill">
-        <b><?php echo $xml->data->item->paslon2_persen ?>%</b>
+    <div class="spinner-border text-light" id="loadingsurvey3paslon2" role="status"></div>
+
+      <b id="survey3paslon2"></b>
       </button>
     </div>
     <div class="col text-center persen">
     <button class="btn btn-dark btn-persen rounded-pill">
-        <b><?php echo $xml->data->item->paslon3_persen ?>%</b>
+    <div class="spinner-border text-light" id="loadingsurvey3paslon3" role="status"></div>
+
+        <b id="survey3paslon3"></b>
       </button>
     </div>
     <div class="col text-center persen">
     <button class="btn btn-dark btn-persen rounded-pill">
-       <b> <?php echo $xml->data->item->totalpaslon_persen ?>%</b>
+    <div class="spinner-border text-light" id="loadingsurvey3total" role="status"></div>
+
+        <b id="survey3total"></b>
       </button>
     </div>
   </div>
 
   </div>
 </main>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
+  $.ajaxSetup({ cache: false });
+function loadSurvey1(){
+  // $('#loadingsurvey1paslon1').show();
+  // $('#loadingsurvey1paslon2').show();
+  // $('#loadingsurvey1paslon3').show();
+  // $('#loadingsurvey1total').show();
+  $.ajax({
+    url: "survey1/pilpres_nasional.xml",
+    dataType: "xml",
+    success: function(xml) {
+      $('#loadingsurvey1paslon1').hide();
+      $('#loadingsurvey1paslon2').hide();
+      $('#loadingsurvey1paslon3').hide();
+      $('#loadingsurvey1total').hide();
+      document.getElementById("survey1paslon1").innerText = $(xml).find('paslon1_persen').text()+" %";
+      document.getElementById("survey1paslon2").innerText = $(xml).find('paslon2_persen').text()+" %";
+      document.getElementById("survey1paslon3").innerText = $(xml).find('paslon3_persen').text()+" %";
+      document.getElementById("survey1total").innerText = $(xml).find('totalpaslon_persen').text()+" %";
+    }
+});
+}
+
+function loadSurvey2(){
+  // $('#loadingsurvey2paslon1').show();
+  // $('#loadingsurvey2paslon2').show();
+  // $('#loadingsurvey2paslon3').show();
+  // $('#loadingsurvey2total').show();
+  $.ajax({
+    url: "survey2/pilpres_nasional.xml",
+    dataType: "xml",
+    success: function(xml) {
+      $('#loadingsurvey2paslon1').hide();
+      $('#loadingsurvey2paslon2').hide();
+      $('#loadingsurvey2paslon3').hide();
+      $('#loadingsurvey2total').hide();
+      document.getElementById("survey2paslon1").innerText = $(xml).find('paslon1_persen').text()+" %";
+      document.getElementById("survey2paslon2").innerText = $(xml).find('paslon2_persen').text()+" %";
+      document.getElementById("survey2paslon3").innerText = $(xml).find('paslon3_persen').text()+" %";
+      document.getElementById("survey2total").innerText = $(xml).find('totalpaslon_persen').text()+" %";
+    }
+});
+}
+
+function loadSurvey3(){
+  // $('#loadingsurvey3paslon1').show();
+  // $('#loadingsurvey3paslon2').show();
+  // $('#loadingsurvey3paslon3').show();
+  // $('#loadingsurvey3total').show();
+  $.ajax({
+    url: "survey3/pilpres_nasional.xml",
+    dataType: "xml",
+    success: function(xml) {
+      $('#loadingsurvey3paslon1').hide();
+      $('#loadingsurvey3paslon2').hide();
+      $('#loadingsurvey3paslon3').hide();
+      $('#loadingsurvey3total').hide();
+      document.getElementById("survey3paslon1").innerText = $(xml).find('paslon1_persen').text()+" %";
+      document.getElementById("survey3paslon2").innerText = $(xml).find('paslon2_persen').text()+" %";
+      document.getElementById("survey3paslon3").innerText = $(xml).find('paslon3_persen').text()+" %";
+      document.getElementById("survey3total").innerText = $(xml).find('totalpaslon_persen').text()+" %";
+    }
+});
+}
+
+function loadData(){
+  loadSurvey1();
+  loadSurvey2();
+  loadSurvey3();
+}
+
 setInterval(() => {
-    window.location.reload(1);
-}, 2000);
+  loadData();
+}, 1000);
+
 </script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
