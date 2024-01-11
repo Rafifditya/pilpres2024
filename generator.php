@@ -74,7 +74,7 @@
         return $simplexml;
     }
 
-    function getPartainas(){
+    function getPartainaspron(){
         $simplexml= new SimpleXMLElement('<?xml version="1.0"?><root/>');
         $propinsiArray = ['NANGGROE ACEH DARUSSALAM', 'SUMATERA UTARA', 'SUMATERA SELATAN', 'SUMATERA BARAT', 'BENGKULU', 'RIAU', 'KEPULAUAN RIAU','JAMBI', 'LAMPUNG', 'BANGKA BELITUNG', 'KALIMANTAN BARAT','KALIMANTAN TIMUR', 'KALIMANTAN SELATAN', 'KALIMANTAN TENGAH', 'KALIMANTAN UTARA', 'BANTEN', 'DKI JAKARTA', 'JAWA BARAT', 'JAWA TENGAH', 'DAERAH ISTIMEWA YOGYAKARTA', 'JAWA TIMUR', 'BALI', 'NUSA TENGGARA TIMUR', 'NUSA TENGGARA BARAT', 'GORONTALO', 'SULAWESI BARAT','SULAWESI TENGAH','SULAWESI UTARA','SULAWESI TENGGARA','SULAWESI SELATAN', 'MALUKU UTARA', 'MALUKU','PAPUA BARAT','PAPUA','PAPUA TENGAH','PAPUA PEGUNUNGAN','PAPUA SELATAN','PAPUA BARAT DAYA'];
         $data = $simplexml->addChild('data');
@@ -114,7 +114,7 @@
         return $simplexml;
     }
 
-    function getPartainaspron(){
+    function getPartainas(){
         $paslon_data = rand_partai();
         $simplexml= new SimpleXMLElement('<?xml version="1.0"?><root/>');
         $data = $simplexml->addChild('data');
