@@ -45,7 +45,7 @@
             $array = [];
             foreach($xml->data->item as $row){
                 $array[] = array(
-                    'provinsi' => $row->provinsi .'',
+                    'namaprovinsi' => $row->namaprovinsi .'',
                     'partai1' => $row->partai1 .'',
                     'partai2' => $row->partai2 .'',
                     'partai3' => $row->partai3 .'',
@@ -76,7 +76,7 @@
             $array = [];
             foreach($xml->data->item as $row){
                 $array[] = array(
-                    'provinsi' => $row->provinsi .'',
+                    'namaprovinsi' => $row->namaprovinsi .'',
                     'paslon1' => $row->paslon1 .'',
                     'paslon2' => $row->paslon2 .'',
                     'paslon3' => $row->paslon3 .'',

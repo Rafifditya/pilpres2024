@@ -65,7 +65,7 @@
             $paslon_data = rand_paslon();
             $item = $data->addChild('item');
             $item->addAttribute('type','dict');
-            $item->addChild("provinsi",$propinsi)->addAttribute('type','string');
+            $item->addChild("namaprovinsi",$propinsi)->addAttribute('type','string');
             $item->addChild("paslon1",$paslon_data['PASLON1'])->addAttribute('type','float');
             $item->addChild("paslon2",$paslon_data['PASLON2'])->addAttribute('type','float');
             $item->addChild("paslon3",$paslon_data['PASLON3'])->addAttribute('type','float');
@@ -85,7 +85,7 @@
             $paslon_data = rand_partai();
             $item = $data->addChild('item');
             $item->addAttribute('type','dict');
-            $item->addChild("provinsi",$propinsi)->addAttribute('type','string');
+            $item->addChild("namaprovinsi",$propinsi)->addAttribute('type','string');
             $item->addChild("partai1",$paslon_data[0])->addAttribute('type','float');
             $item->addChild("partai2",$paslon_data[1])->addAttribute('type','float');
             $item->addChild("partai3",$paslon_data[2])->addAttribute('type','float');
