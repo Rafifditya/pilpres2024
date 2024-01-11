@@ -249,10 +249,10 @@ function loadSurvey1(){
       $('#loadingsurvey1paslon2').hide();
       $('#loadingsurvey1paslon3').hide();
       $('#loadingsurvey1total').hide();
-      document.getElementById("survey1paslon1").innerText = $(xml).find('paslon1_persen').text()+" %";
-      document.getElementById("survey1paslon2").innerText = $(xml).find('paslon2_persen').text()+" %";
-      document.getElementById("survey1paslon3").innerText = $(xml).find('paslon3_persen').text()+" %";
-      document.getElementById("survey1total").innerText = $(xml).find('totalpaslon_persen').text()+" %";
+      document.getElementById("survey1paslon1").innerText = $(xml).find('paslon1').text()+" %";
+      document.getElementById("survey1paslon2").innerText = $(xml).find('paslon2').text()+" %";
+      document.getElementById("survey1paslon3").innerText = $(xml).find('paslon3').text()+" %";
+      document.getElementById("survey1total").innerText = $(xml).find('datamasuk').text()+" %";
     }
 });
 }
@@ -270,10 +270,10 @@ function loadSurvey2(){
       $('#loadingsurvey2paslon2').hide();
       $('#loadingsurvey2paslon3').hide();
       $('#loadingsurvey2total').hide();
-      document.getElementById("survey2paslon1").innerText = $(xml).find('paslon1_persen').text()+" %";
-      document.getElementById("survey2paslon2").innerText = $(xml).find('paslon2_persen').text()+" %";
-      document.getElementById("survey2paslon3").innerText = $(xml).find('paslon3_persen').text()+" %";
-      document.getElementById("survey2total").innerText = $(xml).find('totalpaslon_persen').text()+" %";
+      document.getElementById("survey2paslon1").innerText = $(xml).find('paslon1').text()+" %";
+      document.getElementById("survey2paslon2").innerText = $(xml).find('paslon2').text()+" %";
+      document.getElementById("survey2paslon3").innerText = $(xml).find('paslon3').text()+" %";
+      document.getElementById("survey2total").innerText = $(xml).find('datamasuk').text()+" %";
     }
 });
 }
@@ -291,10 +291,10 @@ function loadSurvey3(){
       $('#loadingsurvey3paslon2').hide();
       $('#loadingsurvey3paslon3').hide();
       $('#loadingsurvey3total').hide();
-      document.getElementById("survey3paslon1").innerText = $(xml).find('paslon1_persen').text()+" %";
-      document.getElementById("survey3paslon2").innerText = $(xml).find('paslon2_persen').text()+" %";
-      document.getElementById("survey3paslon3").innerText = $(xml).find('paslon3_persen').text()+" %";
-      document.getElementById("survey3total").innerText = $(xml).find('totalpaslon_persen').text()+" %";
+      document.getElementById("survey3paslon1").innerText = $(xml).find('paslon1').text()+" %";
+      document.getElementById("survey3paslon2").innerText = $(xml).find('paslon2').text()+" %";
+      document.getElementById("survey3paslon3").innerText = $(xml).find('paslon3').text()+" %";
+      document.getElementById("survey3total").innerText = $(xml).find('datamasuk').text()+" %";
     }
 });
 }

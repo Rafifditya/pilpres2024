@@ -47,10 +47,11 @@
     $data->addAttribute('type','list');
     $item = $data->addChild('item');
     $item->addAttribute('type','dict');
-    $item->addChild("paslon1_persen",$paslon_data['PASLON1'])->addAttribute('type','float');
-    $item->addChild("paslon2_persen",$paslon_data['PASLON2'])->addAttribute('type','float');
-    $item->addChild("paslon3_persen",$paslon_data['PASLON3'])->addAttribute('type','float');
-    $item->addChild("totalpaslon_persen",rand_float(40,100))->addAttribute('type','float');
+    $item->addChild("paslon1",$paslon_data['PASLON1'])->addAttribute('type','float');
+    $item->addChild("paslon2",$paslon_data['PASLON2'])->addAttribute('type','float');
+    $item->addChild("paslon3",$paslon_data['PASLON3'])->addAttribute('type','float');
+    $item->addChild("datamasuk",rand_float(40,100))->addAttribute('type','float');
+    $item->addChild("tingkatpartisipasi",rand_float(40,100))->addAttribute('type','float');
     $simplexml->addChild('created_at',date('Y-m-d H:i:s'))->addAttribute('type','str');
     return $simplexml;
      }
@@ -64,11 +65,12 @@
             $paslon_data = rand_paslon();
             $item = $data->addChild('item');
             $item->addAttribute('type','dict');
-            $item->addChild("nama_provinsi",$propinsi)->addAttribute('type','string');
-            $item->addChild("paslon1_persen",$paslon_data['PASLON1'])->addAttribute('type','float');
-            $item->addChild("paslon2_persen",$paslon_data['PASLON2'])->addAttribute('type','float');
-            $item->addChild("paslon3_persen",$paslon_data['PASLON3'])->addAttribute('type','float');
-            $item->addChild("totalpaslon_persen",rand_float(0,100))->addAttribute('type','float');
+            $item->addChild("provinsi",$propinsi)->addAttribute('type','string');
+            $item->addChild("paslon1",$paslon_data['PASLON1'])->addAttribute('type','float');
+            $item->addChild("paslon2",$paslon_data['PASLON2'])->addAttribute('type','float');
+            $item->addChild("paslon3",$paslon_data['PASLON3'])->addAttribute('type','float');
+            $item->addChild("datamasuk",rand_float(0,100))->addAttribute('type','float');
+            $item->addChild("tingkatpartisipasi",rand_float(40,100))->addAttribute('type','float');
         }
         $simplexml->addChild('created_at',date('Y-m-d H:i:s'))->addAttribute('type','str');
         return $simplexml;
@@ -83,32 +85,27 @@
             $paslon_data = rand_partai();
             $item = $data->addChild('item');
             $item->addAttribute('type','dict');
-            $item->addChild("nama_provinsi",$propinsi)->addAttribute('type','string');
-            $item->addChild("partai01_persen",$paslon_data[0])->addAttribute('type','float');
-            $item->addChild("partai02_persen",$paslon_data[1])->addAttribute('type','float');
-            $item->addChild("partai03_persen",$paslon_data[2])->addAttribute('type','float');
-            $item->addChild("partai04_persen",$paslon_data[3])->addAttribute('type','float');
-            $item->addChild("partai05_persen",$paslon_data[4])->addAttribute('type','float');
-            $item->addChild("partai06_persen",$paslon_data[5])->addAttribute('type','float');
-            $item->addChild("partai07_persen",$paslon_data[6])->addAttribute('type','float');
-            $item->addChild("partai08_persen",$paslon_data[7])->addAttribute('type','float');
-            $item->addChild("partai09_persen",$paslon_data[8])->addAttribute('type','float');
-            $item->addChild("partai10_persen",$paslon_data[9])->addAttribute('type','float');
-            $item->addChild("partai11_persen",$paslon_data[10])->addAttribute('type','float');
-            $item->addChild("partai12_persen",$paslon_data[11])->addAttribute('type','float');
-            $item->addChild("partai13_persen",$paslon_data[12])->addAttribute('type','float');
-            $item->addChild("partai14_persen",$paslon_data[13])->addAttribute('type','float');
-            $item->addChild("partai15_persen",$paslon_data[14])->addAttribute('type','float');
-            $item->addChild("partai16_persen",$paslon_data[15])->addAttribute('type','float');
-            $item->addChild("partai17_persen",$paslon_data[16])->addAttribute('type','float');
-            $item->addChild("partai18_persen",$paslon_data[17])->addAttribute('type','float');
-            $item->addChild("partai19_persen",$paslon_data[18])->addAttribute('type','float');
-            $item->addChild("partai20_persen",$paslon_data[19])->addAttribute('type','float');
-            $item->addChild("partai21_persen",$paslon_data[20])->addAttribute('type','float');
-            $item->addChild("partai22_persen",$paslon_data[21])->addAttribute('type','float');
-            $item->addChild("partai23_persen",$paslon_data[22])->addAttribute('type','float');
-            $item->addChild("partai24_persen",$paslon_data[23])->addAttribute('type','float');
-            $item->addChild("totalpartai_persen",rand_float(0,100))->addAttribute('type','float');
+            $item->addChild("provinsi",$propinsi)->addAttribute('type','string');
+            $item->addChild("partai1",$paslon_data[0])->addAttribute('type','float');
+            $item->addChild("partai2",$paslon_data[1])->addAttribute('type','float');
+            $item->addChild("partai3",$paslon_data[2])->addAttribute('type','float');
+            $item->addChild("partai4",$paslon_data[3])->addAttribute('type','float');
+            $item->addChild("partai5",$paslon_data[4])->addAttribute('type','float');
+            $item->addChild("partai6",$paslon_data[5])->addAttribute('type','float');
+            $item->addChild("partai7",$paslon_data[6])->addAttribute('type','float');
+            $item->addChild("partai8",$paslon_data[7])->addAttribute('type','float');
+            $item->addChild("partai9",$paslon_data[8])->addAttribute('type','float');
+            $item->addChild("partai10",$paslon_data[9])->addAttribute('type','float');
+            $item->addChild("partai11",$paslon_data[10])->addAttribute('type','float');
+            $item->addChild("partai12",$paslon_data[11])->addAttribute('type','float');
+            $item->addChild("partai13",$paslon_data[12])->addAttribute('type','float');
+            $item->addChild("partai14",$paslon_data[13])->addAttribute('type','float');
+            $item->addChild("partai15",$paslon_data[14])->addAttribute('type','float');
+            $item->addChild("partai16",$paslon_data[15])->addAttribute('type','float');
+            $item->addChild("partai17",$paslon_data[16])->addAttribute('type','float');
+            $item->addChild("partai24",$paslon_data[23])->addAttribute('type','float');
+            $item->addChild("datamasuk",rand_float(0,100))->addAttribute('type','float');
+            $item->addChild("tingkatpartisipasi",rand_float(40,100))->addAttribute('type','float');
         }
         $simplexml->addChild('created_at',date('Y-m-d H:i:s'))->addAttribute('type','str');
         return $simplexml;
@@ -121,31 +118,26 @@
         $data->addAttribute('type','list');
         $item = $data->addChild('item');
         $item->addAttribute('type','dict');
-        $item->addChild("partai01_persen",$paslon_data[0])->addAttribute('type','float');
-        $item->addChild("partai02_persen",$paslon_data[1])->addAttribute('type','float');
-        $item->addChild("partai03_persen",$paslon_data[2])->addAttribute('type','float');
-        $item->addChild("partai04_persen",$paslon_data[3])->addAttribute('type','float');
-        $item->addChild("partai05_persen",$paslon_data[4])->addAttribute('type','float');
-        $item->addChild("partai06_persen",$paslon_data[5])->addAttribute('type','float');
-        $item->addChild("partai07_persen",$paslon_data[6])->addAttribute('type','float');
-        $item->addChild("partai08_persen",$paslon_data[7])->addAttribute('type','float');
-        $item->addChild("partai09_persen",$paslon_data[8])->addAttribute('type','float');
-        $item->addChild("partai10_persen",$paslon_data[9])->addAttribute('type','float');
-        $item->addChild("partai11_persen",$paslon_data[10])->addAttribute('type','float');
-        $item->addChild("partai12_persen",$paslon_data[11])->addAttribute('type','float');
-        $item->addChild("partai13_persen",$paslon_data[12])->addAttribute('type','float');
-        $item->addChild("partai14_persen",$paslon_data[13])->addAttribute('type','float');
-        $item->addChild("partai15_persen",$paslon_data[14])->addAttribute('type','float');
-        $item->addChild("partai16_persen",$paslon_data[15])->addAttribute('type','float');
-        $item->addChild("partai17_persen",$paslon_data[16])->addAttribute('type','float');
-        $item->addChild("partai18_persen",$paslon_data[17])->addAttribute('type','float');
-        $item->addChild("partai19_persen",$paslon_data[18])->addAttribute('type','float');
-        $item->addChild("partai20_persen",$paslon_data[19])->addAttribute('type','float');
-        $item->addChild("partai21_persen",$paslon_data[20])->addAttribute('type','float');
-        $item->addChild("partai22_persen",$paslon_data[21])->addAttribute('type','float');
-        $item->addChild("partai23_persen",$paslon_data[22])->addAttribute('type','float');
-        $item->addChild("partai24_persen",$paslon_data[23])->addAttribute('type','float');
-        $item->addChild("totalpartai_persen",rand_float(0,100))->addAttribute('type','float');
+        $item->addChild("partai1",$paslon_data[0])->addAttribute('type','float');
+        $item->addChild("partai2",$paslon_data[1])->addAttribute('type','float');
+        $item->addChild("partai3",$paslon_data[2])->addAttribute('type','float');
+        $item->addChild("partai4",$paslon_data[3])->addAttribute('type','float');
+        $item->addChild("partai5",$paslon_data[4])->addAttribute('type','float');
+        $item->addChild("partai6",$paslon_data[5])->addAttribute('type','float');
+        $item->addChild("partai7",$paslon_data[6])->addAttribute('type','float');
+        $item->addChild("partai8",$paslon_data[7])->addAttribute('type','float');
+        $item->addChild("partai9",$paslon_data[8])->addAttribute('type','float');
+        $item->addChild("partai10",$paslon_data[9])->addAttribute('type','float');
+        $item->addChild("partai11",$paslon_data[10])->addAttribute('type','float');
+        $item->addChild("partai12",$paslon_data[11])->addAttribute('type','float');
+        $item->addChild("partai13",$paslon_data[12])->addAttribute('type','float');
+        $item->addChild("partai14",$paslon_data[13])->addAttribute('type','float');
+        $item->addChild("partai15",$paslon_data[14])->addAttribute('type','float');
+        $item->addChild("partai16",$paslon_data[15])->addAttribute('type','float');
+        $item->addChild("partai17",$paslon_data[16])->addAttribute('type','float');
+        $item->addChild("partai24",$paslon_data[23])->addAttribute('type','float');
+        $item->addChild("datamasuk",rand_float(0,100))->addAttribute('type','float');
+        $item->addChild("tingkatpartisipasi",rand_float(40,100))->addAttribute('type','float');
         $simplexml->addChild('created_at',date('Y-m-d H:i:s'))->addAttribute('type','str');
         return $simplexml;
     }
@@ -175,29 +167,29 @@
    fwrite($survey3, getPilpresnas()->asXML());
    fclose($survey3);
 
-   $survey1 = fopen('survey1/pilpres_nasional_perpropinsi.xml', "w");
+   $survey1 = fopen('survey1/pilpres_nasional_perprovinsi.xml', "w");
    fwrite($survey1, getPilpresProvinsi()->asXML());
    fclose($survey1);
    
   
-   $survey2 = fopen('survey2/pilpres_nasional_perpropinsi.xml', "w");
+   $survey2 = fopen('survey2/pilpres_nasional_perprovinsi.xml', "w");
    fwrite($survey2, getPilpresProvinsi()->asXML());
    fclose($survey2);
 
-   $survey3 = fopen('survey3/pilpres_nasional_perpropinsi.xml', "w");
+   $survey3 = fopen('survey3/pilpres_nasional_perprovinsi.xml', "w");
    fwrite($survey3, getPilpresProvinsi()->asXML());
    fclose($survey3);
 
-   $survey1 = fopen('survey1/partai_nasional_perpropinsi.xml', "w");
+   $survey1 = fopen('survey1/partai_nasional_perprovinsi.xml', "w");
    fwrite($survey1, getPartainaspron()->asXML());
    fclose($survey1);
    
   
-   $survey2 = fopen('survey2/partai_nasional_perpropinsi.xml', "w");
+   $survey2 = fopen('survey2/partai_nasional_perprovinsi.xml', "w");
    fwrite($survey2, getPartainaspron()->asXML());
    fclose($survey2);
 
-   $survey3 = fopen('survey3/partai_nasional_perpropinsi.xml', "w");
+   $survey3 = fopen('survey3/partai_nasional_perprovinsi.xml', "w");
    fwrite($survey3, getPartainaspron()->asXML());
    fclose($survey3);
 
