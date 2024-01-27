@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <title>Quickcount 2024 Nasional</title>
+    <title>Quickcount 2024 Partai</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet"> 
@@ -13,7 +13,7 @@
 <style>
  
   body {
-    background-image: url(image/bg_nas_new.png);
+    background-image: url(image/bg_partai.png);
     background-size: 100%;
     font-family: 'Poppins', sans-serif;
    position: absolute;
@@ -44,8 +44,8 @@
   }
 
   .img-paslon{
-    width: 55%;
-    height: 45%;
+    width: 90px;
+    height: 60px;
   }
 
 
@@ -128,39 +128,33 @@
   <div class="row paslon">
   <div class="col text-center">
     </div>
-    <div class="col text-center" style="padding-left: 85px;">
-      <img src="image/anies.png" class="img-paslon">
-      <br>
-      <br>
-      <p><b>Anies Baswedan
-      <br>
-      Muhaimin Iskandar</b>
-    </p>
+    <div class="col text-center">
+    </div>
+      <?php $i=0; ?>
+      <?php for($i=0;$i<18;$i++){ ?>
+      <?php } ?>
+  </div>
+  </div>
+  <div class="row paslon">
+  <div class="col text-center">
     </div>
     <div class="col text-center">
-      <img src="image/prabowo.png" class="img-paslon">
-      <br>
-      <br>
-      <p><b>Prabowo Subianto
-      <br>
-      Gibran Rakabuming</b>
-    </p>
+    </div>
+      <?php $i=0; ?>
+      <?php for($i=0;$i<18;$i++){ ?>
+          <img src="image/Partai/<?=($i+1)?>.png" class="img-paslon">
+      <?php } ?>
+      <div class="col text-center">
+      <p>
+      <b>Total Data Masuk</b>
+      </p>
     </div>
     <div class="col text-center">
-      <img src="image/ganjar.png" class="img-paslon">
-      <br>
-      <br>
-      <p><b>Ganjar Pranowo
-      <br>
-      Mahfud MD</b>
-    </p>
-    </div>
-    <div class="col text-center total-suara">
-      <p><b>Total Data <br> Masuk</b></p>
-    </div>
-    <div class="col text-center total-suara">
-      <p><b>Tingkat <br> Partisipasi</b></p>
-    </div>
+   <p>
+   <b>Total Partisipasi</b>
+   </p> 
+
+  </div>
   </div>
 
   <div class="row suara-paslon bg-white rounded">
