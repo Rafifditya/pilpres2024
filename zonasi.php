@@ -82,7 +82,7 @@
   }
 
   .text-persen-paslon{
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 
   .persen{
@@ -126,10 +126,11 @@
     </div>
     <div class="col-2 text-center">
     </div>
-    <div class="col text-center">
-    </div>
     <div class="col text-center" style="padding-left:40px;">
-    <p>SUMATRA</p>
+    <p>SUMBAGUT</p>
+    </div>
+    <div class="col text-center">
+      <p>SUMBAGSEL</p>
     </div>
     <div class="col text-center">
       <p>BANTEN</p>
@@ -141,7 +142,7 @@
       <p>JABAR</p>
     </div>
     <div class="col text-center">
-      <p>JATENG DIY</p>
+      <p>JATENG & DIY</p>
     </div>
     <div class="col text-center">
       <p>JATIM</p>
@@ -156,7 +157,7 @@
       <p>SULAWESI</p>
     </div>
     <div class="col text-center">
-      <p>MALUKU</p>
+      <p>MALUKU & PAPUA</p>
     </div>
   </div>
 
@@ -164,17 +165,6 @@
   <div class="col text-center suara-persen align-self-center">
     <img src="image/charta.png" class="img-survey">
     </div> 
-    <div class="col text-center">
-       <div class="row">
-        <img src="image/anies.png" class="img-paslon">
-       </div>
-       <div class="row">
-         <img src="image/prabowo.png" class="img-paslon">
-       </div>
-       <div class="row">
-         <img src="image/ganjar.png" class="img-paslon">
-       </div>
-    </div>
     <div class="col-2 text-center nama-paslon">
        <div class="row">
         <p>
@@ -224,7 +214,7 @@
     </div>
 
     <?php $i=0; ?>
-    <?php for($i=0;$i<10;$i++){?>
+    <?php for($i=0;$i<11;$i++){?>
   <div class="col text-center">
     <div class="row persen">
     <button class="btn btn-dark btn-persen rounded">
@@ -260,60 +250,11 @@
   <?php } ?>
   </div>
 
-  <div class="row paslon">
-  <div class="col text-center">
-    </div>
-    <div class="col-2 text-center">
-    </div>
-    <div class="col text-center">
-    </div>
-    <div class="col text-center" style="padding-left:40px;">
-    <p>SUMATRA</p>
-    </div>
-    <div class="col text-center">
-      <p>BANTEN</p>
-    </div>
-    <div class="col text-center">
-      <p>DKI JAKARTA</p>
-    </div>
-    <div class="col text-center">
-      <p>JABAR</p>
-    </div>
-    <div class="col text-center">
-      <p>JATENG DIY</p>
-    </div>
-    <div class="col text-center">
-      <p>JATIM</p>
-    </div>
-    <div class="col text-center">
-      <p>BALI NTT & NTB</p>
-    </div>
-    <div class="col text-center">
-      <p>KALIMANTAN</p>
-    </div>
-    <div class="col text-center">
-      <p>SULAWESI</p>
-    </div>
-    <div class="col text-center">
-      <p>MALUKU</p>
-    </div>
-  </div>
 
   <div class="row suara-paslon">
   <div class="col text-center suara-persen align-self-center">
     <img src="image/indikator.png" class="img-survey">
     </div> 
-    <div class="col text-center">
-       <div class="row">
-        <img src="image/anies.png" class="img-paslon">
-       </div>
-       <div class="row">
-         <img src="image/prabowo.png" class="img-paslon">
-       </div>
-       <div class="row">
-         <img src="image/ganjar.png" class="img-paslon">
-       </div>
-    </div>
     <div class="col-2 text-center nama-paslon">
        <div class="row">
         <p>
@@ -363,7 +304,7 @@
     </div>
     
     <?php $i=0; ?>
-    <?php for($i=0;$i<10;$i++){?>
+    <?php for($i=0;$i<11;$i++){?>
   <div class="col text-center">
     <div class="row persen">
     <button class="btn btn-dark btn-persen rounded">
@@ -404,10 +345,11 @@
     </div>
     <div class="col-2 text-center">
     </div>
-    <div class="col text-center">
-    </div>
     <div class="col text-center" style="padding-left:40px;">
-    <p>SUMATRA</p>
+    <p>SUMBAGUT</p>
+    </div>
+    <div class="col text-center">
+      <p>SUMBAGSEL</p>
     </div>
     <div class="col text-center">
       <p>BANTEN</p>
@@ -419,7 +361,7 @@
       <p>JABAR</p>
     </div>
     <div class="col text-center">
-      <p>JATENG DIY</p>
+      <p>JATENG & DIY</p>
     </div>
     <div class="col text-center">
       <p>JATIM</p>
@@ -434,25 +376,15 @@
       <p>SULAWESI</p>
     </div>
     <div class="col text-center">
-      <p>MALUKU</p>
+      <p>MALUKU & PAPUA</p>
     </div>
   </div>
+
 
   <div class="row suara-paslon">
   <div class="col text-center suara-persen align-self-center">
     <img src="image/v1_20.png" class="img-survey">
     </div> 
-    <div class="col text-center">
-       <div class="row">
-        <img src="image/anies.png" class="img-paslon">
-       </div>
-       <div class="row">
-         <img src="image/prabowo.png" class="img-paslon">
-       </div>
-       <div class="row">
-         <img src="image/ganjar.png" class="img-paslon">
-       </div>
-    </div>
     <div class="col-2 text-center nama-paslon">
        <div class="row">
         <p>
@@ -502,7 +434,7 @@
     </div>
     
     <?php $i=0; ?>
-    <?php for($i=0;$i<10;$i++){?>
+    <?php for($i=0;$i<11;$i++){?>
   <div class="col text-center">
     <div class="row persen">
     <button class="btn btn-dark btn-persen rounded">
@@ -555,7 +487,7 @@ function loadSurvey1(){
     dataType: "xml",
     success: function(xml) {
       
-      for(i=0;i<10;i++){
+      for(i=0;i<11;i++){
       $('#loadinguvery1paslon1zona'+(i+1)).hide();
       $('#loadinguvery1paslon2zona'+(i+1)).hide();
       $('#loadinguvery1paslon3zona'+(i+1)).hide();
@@ -580,20 +512,12 @@ function loadSurvey1(){
 
 function loadSurvey2(){
 
-  for(i=0;i<10;i++){
-      $('#loadinguvery2paslon1zona'+(i+1)).hide();
-      $('#loadinguvery2paslon2zona'+(i+1)).hide();
-      $('#loadinguvery2paslon3zona'+(i+1)).hide();
-      $('#loadinguvery2totalzona'+(i+1)).hide();
-      $('#loadinguvery2partisipasizona'+(i+1)).hide();
-  }
-
   $.ajax({
     url: "survey2/pilpres_nasional_perzonasi.xml",
     dataType: "xml",
     success: function(xml) {
 
-      for(i=0;i<10;i++){
+      for(i=0;i<11;i++){
       $('#loadinguvery2paslon1zona'+(i+1)).hide();
       $('#loadinguvery2paslon2zona'+(i+1)).hide();
       $('#loadinguvery2paslon3zona'+(i+1)).hide();
@@ -616,15 +540,13 @@ function loadSurvey2(){
 }
 
 function loadSurvey3(){
- 
-
   
   $.ajax({
     url: "survey3/pilpres_nasional_perzonasi.xml",
     dataType: "xml",
     success: function(xml) {
 
-      for(i=0;i<10;i++){
+      for(i=0;i<11;i++){
       $('#loadinguvery3paslon1zona'+(i+1)).hide();
       $('#loadinguvery3paslon2zona'+(i+1)).hide();
       $('#loadinguvery3paslon3zona'+(i+1)).hide();
@@ -656,7 +578,7 @@ function timestamp(){
   document.getElementById("timestamp").innerText = new Date(Date.now());
 }
 
-document.getElementById("version").innerText = "Version: 1.02";
+document.getElementById("version").innerText = "Version: 1.02,  Copyright For Broadcast Support Internal Use";
 setInterval(() => {
   loadData();
   timestamp();

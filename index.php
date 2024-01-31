@@ -361,7 +361,7 @@ function timestamp(){
   document.getElementById("timestamp").innerText = new Date(Date.now());
 }
 
-document.getElementById("version").innerText = "Version: 1.02";
+document.getElementById("version").innerText = "Version: 1.02, Copyright For Broadcast Support Internal Use";
 setInterval(() => {
   loadData();
   timestamp();

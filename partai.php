@@ -20,7 +20,7 @@
   }
   .paslon {
     float: right;
-    padding-top: 180px;
+    padding-top: 250px;
     width: 98%;
     margin-left: 10px;
     margin-right: 10px;
@@ -52,7 +52,6 @@
   .img-survey{
     width: 100px;
     height: 60px;
-    margin-left: 100px;
   }
 
   .total-suara {
@@ -93,8 +92,10 @@
 
 
   .btn-persen {
-    width: 175px;
+    width: 70px;
     padding-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
     padding-bottom: 10px;
   }
 
@@ -118,182 +119,138 @@
     <a href="zonasi.php" class="btn btn-dark rounded-pill" style="margin-left:5px; font-size:0.8rem; font-family:sans-serif;">Page Zonasi</a>
   </div>
   <div class="button-page">
-    <a href="partai.php" class="btn btn-dark rounded-pill" style="margin-left:5px; font-size:0.8rem; font-family:sans-serif;">Page Partai Zonasi</a>
+    <a href="index.php" class="btn btn-dark rounded-pill" style="margin-left:5px; font-size:0.8rem; font-family:sans-serif;">Page Nasional</a>
   </div>
 
     <span id="version" class="sr-only text-white" style="margin-left:5px; font-size:0.7rem; font-family:sans-serif;">Version :  </span>
 
 
   <div class="container-fluid">
-  <div class="row paslon">
-  <div class="col text-center">
-    </div>
-    <div class="col text-center">
-    </div>
-      <?php $i=0; ?>
-      <?php for($i=0;$i<18;$i++){ ?>
-      <?php } ?>
-  </div>
   </div>
   <div class="row paslon">
-  <div class="col text-center">
-    </div>
     <div class="col text-center">
-    </div>
-      <?php $i=0; ?>
-      <?php for($i=0;$i<18;$i++){ ?>
-          <img src="image/Partai/<?=($i+1)?>.png" class="img-paslon">
-      <?php } ?>
+      </div>
       <div class="col text-center">
-      <p>
-      <b>Total Data Masuk</b>
-      </p>
-    </div>
-    <div class="col text-center">
-   <p>
-   <b>Total Partisipasi</b>
-   </p> 
+      </div>
+        <?php $i=0; ?>
+        <?php for($i=0;$i<18;$i++){ ?>
+            <img src="image/Partai/<?=($i+1)?>.png" class="img-paslon">
+        <?php } ?>
+        <div class="col text-center">
+        <p>
+        <b>Total Data Masuk</b>
+        </p>
+      </div>
+      <div class="col text-center">
+    <p>
+    <b>Total Partisipasi</b>
+    </p> 
 
-  </div>
-  </div>
-
-  <div class="row suara-paslon bg-white rounded">
-  <div class="col text-center suara-persen">
-    <img src="image/charta.png" class="img-survey">
-    </div> 
-  <div class="col text-center persen" style="padding-left:80px;">
-    <button class="btn btn-dark btn-persen rounded">
-    <div class="spinner-border text-light" id="loadingsurvey1paslon1" role="status"></div>
-      <b id="survey1paslon1"></b>
-      </button>
-    </div>
-    <div class="col text-center persen">
-      <button class="btn btn-dark btn-persen rounded">
-        <div class="spinner-border text-light" id="loadingsurvey1paslon2" role="status"></div>
-
-        <b id="survey1paslon2"></b>
-      </button>
-    </div>
-    <div class="col text-center persen">
-    <button class="btn btn-dark btn-persen rounded">
-      <div class="spinner-border text-light" id="loadingsurvey1paslon3" role="status"></div>
-
-        <b id="survey1paslon3"></b>
-      </button>
-    </div>
-    <div class="col text-center persen">
-    <button class="btn btn-dark btn-persen rounded">
-      <div class="spinner-border text-light" id="loadingsurvey1total" role="status"></div>
-        <b id="survey1total"></b>
-      </button>
-    </div>
-    <div class="col text-center persen">
-    <button class="btn btn-dark btn-persen rounded">
-      <div class="spinner-border text-light" id="loadingsurvey1partisipasi" role="status"></div>
-        <b id="survey1partisipasi"></b>
-      </button>
     </div>
   </div>
 
   <div class="row suara-paslon bg-white rounded">
-  <div class="col text-center suara-persen">
-    <img src="image/indikator.png" class="img-survey">
-    </div> 
-  <div class="col text-center persen" style="padding-left:80px;">
-    <button class="btn btn-dark btn-persen rounded">
-    <div class="spinner-border text-light" id="loadingsurvey2paslon1" role="status"></div>
-      <b id="survey2paslon1"></b>
-      </button>
+    <div class="col-1 text-center" style="margin-right:75px;">
+      <img src="image/charta.png" class="img-survey" >
     </div>
-    <div class="col text-center persen">
+      <?php $i=0; ?>
+        <?php for($i=0;$i<18;$i++){ ?>
+          <button class="btn btn-dark btn-persen rounded">
+          <div class="spinner-border text-light" id="loadingsurvey1partai<?=($i+1)?>" role="status"></div>
+      <b id="survey1partai<?=($i+1)?>"></b>
+      </button>
+        <?php } ?>
+        <div class="col text-center">
       <button class="btn btn-dark btn-persen rounded">
-    <div class="spinner-border text-light" id="loadingsurvey2paslon2" role="status"></div>
-        <b id="survey2paslon2"></b>
-      </button>
-    </div>
-    <div class="col text-center persen">
-    <button class="btn btn-dark btn-persen rounded">
-    <div class="spinner-border text-light" id="loadingsurvey2paslon3" role="status"></div>
-    <b id="survey2paslon3"></b>
-      </button>
-    </div>
-    <div class="col text-center persen">
-    <button class="btn btn-dark btn-persen rounded">
-    <div class="spinner-border text-light" id="loadingsurvey2total" role="status"></div>
-        <b id="survey2total"></b>
-      </button>
-    </div>
-    <div class="col text-center persen">
-    <button class="btn btn-dark btn-persen rounded">
-      <div class="spinner-border text-light" id="loadingsurvey2partisipasi" role="status"></div>
-        <b id="survey2partisipasi"></b>
-      </button>
+           <div class="spinner-border text-light" id="loadingsurvey1datamasuk" role="status"></div>
+          <b id="survey1datamasuk"></b>
+        </button>
+        </div>
+        <div class="col text-center">
+      <button class="btn btn-dark btn-persen rounded">
+           <div class="spinner-border text-light" id="loadingsurvey1partisipasi" role="status"></div>
+          <b id="survey1partisipasi"></b>
+        </button>
     </div>
   </div>
 
   <div class="row suara-paslon bg-white rounded">
-  <div class="col text-center suara-persen">
-    <img src="image/v1_20.png" class="img-survey">
-    </div> 
-  <div class="col text-center persen" style="padding-left:80px;">
-    <button class="btn btn-dark btn-persen rounded">
-    <div class="spinner-border text-light" id="loadingsurvey3paslon1" role="status"></div>
-      <b id="survey3paslon1"></b>
-      </button>
+    <div class="col-1 text-center" style="margin-right:75px;">
+      <img src="image/indikator.png" class="img-survey" >
     </div>
-    <div class="col text-center persen">
+      <?php $i=0; ?>
+        <?php for($i=0;$i<18;$i++){ ?>
+          <button class="btn btn-dark btn-persen rounded">
+          <div class="spinner-border text-light" id="loadingsurvey2partai<?=($i+1)?>" role="status"></div>
+      <b id="survey2partai<?=($i+1)?>"></b>
+      </button>
+        <?php } ?>
+        <div class="col text-center">
       <button class="btn btn-dark btn-persen rounded">
-    <div class="spinner-border text-light" id="loadingsurvey3paslon2" role="status"></div>
-
-      <b id="survey3paslon2"></b>
-      </button>
-    </div>
-    <div class="col text-center persen">
-    <button class="btn btn-dark btn-persen rounded">
-    <div class="spinner-border text-light" id="loadingsurvey3paslon3" role="status"></div>
-
-        <b id="survey3paslon3"></b>
-      </button>
-    </div>
-    <div class="col text-center persen">
-    <button class="btn btn-dark btn-persen rounded">
-    <div class="spinner-border text-light" id="loadingsurvey3total" role="status"></div>
-
-        <b id="survey3total"></b>
-      </button>
-    </div>
-    <div class="col text-center persen">
-    <button class="btn btn-dark btn-persen rounded">
-      <div class="spinner-border text-light" id="loadingsurvey3partisipasi" role="status"></div>
-        <b id="survey3partisipasi"></b>
-      </button>
+           <div class="spinner-border text-light" id="loadingsurvey2datamasuk" role="status"></div>
+          <b id="survey2datamasuk"></b>
+        </button>
+        </div>
+        <div class="col text-center">
+      <button class="btn btn-dark btn-persen rounded">
+           <div class="spinner-border text-light" id="loadingsurvey2partisipasi" role="status"></div>
+          <b id="survey2partisipasi"></b>
+        </button>
     </div>
   </div>
 
+  <div class="row suara-paslon bg-white rounded">
+    <div class="col-1 text-center" style="margin-right:75px;">
+      <img src="image/v1_20.png" class="img-survey" >
+    </div>
+      <?php $i=0; ?>
+        <?php for($i=0;$i<18;$i++){ ?>
+          <button class="btn btn-dark btn-persen rounded">
+          <div class="spinner-border text-light" id="loadingsurvey3partai<?=($i+1)?>" role="status"></div>
+      <b id="survey3partai<?=($i+1)?>"></b>
+      </button>
+        <?php } ?>
+        <div class="col text-center">
+      <button class="btn btn-dark btn-persen rounded">
+           <div class="spinner-border text-light" id="loadingsurvey3datamasuk" role="status"></div>
+          <b id="survey3datamasuk"></b>
+        </button>
+        </div>
+        <div class="col text-center">
+      <button class="btn btn-dark btn-persen rounded">
+           <div class="spinner-border text-light" id="loadingsurvey3partisipasi" role="status"></div>
+          <b id="survey3partisipasi"></b>
+        </button>
+    </div>
   </div>
+
+</div>
 </main>
 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
   $.ajaxSetup({ cache: false });
 function loadSurvey1(){
-  // $('#loadingsurvey1paslon1').show();
-  // $('#loadingsurvey1paslon2').show();
-  // $('#loadingsurvey1paslon3').show();
-  // $('#loadingsurvey1total').show();
   $.ajax({
-    url: "survey1/pilpres_nasional.xml",
+    url: "survey1/partai_nasional.xml",
     dataType: "xml",
     success: function(xml) {
-      $('#loadingsurvey1paslon1').hide();
-      $('#loadingsurvey1paslon2').hide();
-      $('#loadingsurvey1paslon3').hide();
-      $('#loadingsurvey1total').hide();
       $('#loadingsurvey1partisipasi').hide();
-      document.getElementById("survey1paslon1").innerText = $(xml).find('paslon1').text()+" %";
-      document.getElementById("survey1paslon2").innerText = $(xml).find('paslon2').text()+" %";
-      document.getElementById("survey1paslon3").innerText = $(xml).find('paslon3').text()+" %";
-      document.getElementById("survey1total").innerText = $(xml).find('datamasuk').text()+" %";
+      $('#loadingsurvey1datamasuk').hide();
+
+      for(i=0;i<18;i++){
+        $('#loadingsurvey1partai'+(i+1)).hide();
+      }
+
+      for(i=0;i<18;i++){
+        $('#loadingsurvey1partai'+(i+1)).hide();
+        if(i != 17){
+          document.getElementById("survey1partai"+(i+1)).innerText = $(xml).find('partai'+(i+1)).text()+" %";
+        } else {
+          document.getElementById("survey1partai"+(i+1)).innerText = $(xml).find('partai24').text()+" %";
+        }
+      }
+      document.getElementById("survey1datamasuk").innerText = $(xml).find('datamasuk').text()+" %";
       document.getElementById("survey1partisipasi").innerText = $(xml).find('tingkatpartisipasi').text()+" %";
     }
 });
@@ -305,18 +262,25 @@ function loadSurvey2(){
   // $('#loadingsurvey2paslon3').show();
   // $('#loadingsurvey2total').show();
   $.ajax({
-    url: "survey2/pilpres_nasional.xml",
+    url: "survey2/partai_nasional.xml",
     dataType: "xml",
     success: function(xml) {
-      $('#loadingsurvey2paslon1').hide();
-      $('#loadingsurvey2paslon2').hide();
-      $('#loadingsurvey2paslon3').hide();
-      $('#loadingsurvey2total').hide();
       $('#loadingsurvey2partisipasi').hide();
-      document.getElementById("survey2paslon1").innerText = $(xml).find('paslon1').text()+" %";
-      document.getElementById("survey2paslon2").innerText = $(xml).find('paslon2').text()+" %";
-      document.getElementById("survey2paslon3").innerText = $(xml).find('paslon3').text()+" %";
-      document.getElementById("survey2total").innerText = $(xml).find('datamasuk').text()+" %";
+      $('#loadingsurvey2datamasuk').hide();
+
+      for(i=0;i<18;i++){
+        $('#loadingsurvey2partai'+(i+1)).hide();
+      }
+
+      for(i=0;i<18;i++){
+        $('#loadingsurvey2partai'+(i+1)).hide();
+        if(i != 17){
+          document.getElementById("survey2partai"+(i+1)).innerText = $(xml).find('partai'+(i+1)).text()+" %";
+        } else {
+          document.getElementById("survey2partai"+(i+1)).innerText = $(xml).find('partai24').text()+" %";
+        }
+      }
+      document.getElementById("survey2datamasuk").innerText = $(xml).find('datamasuk').text()+" %";
       document.getElementById("survey2partisipasi").innerText = $(xml).find('tingkatpartisipasi').text()+" %";
     }
 });
@@ -328,18 +292,25 @@ function loadSurvey3(){
   // $('#loadingsurvey3paslon3').show();
   // $('#loadingsurvey3total').show();
   $.ajax({
-    url: "survey3/pilpres_nasional.xml",
+    url: "survey3/partai_nasional.xml",
     dataType: "xml",
     success: function(xml) {
-      $('#loadingsurvey3paslon1').hide();
-      $('#loadingsurvey3paslon2').hide();
-      $('#loadingsurvey3paslon3').hide();
-      $('#loadingsurvey3total').hide();
       $('#loadingsurvey3partisipasi').hide();
-      document.getElementById("survey3paslon1").innerText = $(xml).find('paslon1').text()+" %";
-      document.getElementById("survey3paslon2").innerText = $(xml).find('paslon2').text()+" %";
-      document.getElementById("survey3paslon3").innerText = $(xml).find('paslon3').text()+" %";
-      document.getElementById("survey3total").innerText = $(xml).find('datamasuk').text()+" %";
+      $('#loadingsurvey3datamasuk').hide();
+
+      for(i=0;i<18;i++){
+        $('#loadingsurvey3partai'+(i+1)).hide();
+      }
+
+      for(i=0;i<18;i++){
+        $('#loadingsurvey3partai'+(i+1)).hide();
+        if(i != 17){
+          document.getElementById("survey3partai"+(i+1)).innerText = $(xml).find('partai'+(i+1)).text()+" %";
+        } else {
+          document.getElementById("survey3partai"+(i+1)).innerText = $(xml).find('partai24').text()+" %";
+        }
+      }
+      document.getElementById("survey3datamasuk").innerText = $(xml).find('datamasuk').text()+" %";
       document.getElementById("survey3partisipasi").innerText = $(xml).find('tingkatpartisipasi').text()+" %";
     }
 });
@@ -355,7 +326,7 @@ function timestamp(){
   document.getElementById("timestamp").innerText = new Date(Date.now());
 }
 
-document.getElementById("version").innerText = "Version: 1.02";
+document.getElementById("version").innerText = "Version: 1.02, Copyright for Broadcast Support Internal Use";
 setInterval(() => {
   loadData();
   timestamp();
