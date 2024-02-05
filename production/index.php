@@ -110,7 +110,7 @@
 </div>
 <div class="spinner-grow spinner-grow-sm text-success" role="status">
 </div>
-    <span class="sr-only text-white" style="margin-left:5px; font-size:0.8rem; font-family:sans-serif;">Dummy LIVE Update : <span id="timestamp"></span> </span>
+    <span class="sr-only text-white" style="margin-left:5px; font-size:0.8rem; font-family:sans-serif;">LIVE Update : <span id="timestamp"></span> </span>
   </div>
 
   
@@ -311,7 +311,9 @@ function loadSurvey2(){
   // $('#loadingsurvey2paslon3').show();
   // $('#loadingsurvey2total').show();
   $.ajax({
+    type:'GET',
     url: "survey2/pilpres_nasional.xml",
+    crossDomain:true,
     dataType: "xml",
     success: function(xml) {
       $('#loadingsurvey2paslon1').hide();
@@ -334,9 +336,21 @@ function loadSurvey3(){
   // $('#loadingsurvey3paslon3').show();
   // $('#loadingsurvey3total').show();
   $.ajax({
-    url: "survey3/pilpres_nasional.xml",
-    dataType: "xml",
-    success: function(xml) {
+    type:'GET',
+    url: "http://qc2024.web.id/data/TV/EMTEK/quickcount_2024.php",
+    dataType: "jsonp",
+    CORS: true ,
+    contentType:'application/json',
+    secure: true,
+    headers: {'Access-Control-Allow-Credentials' : true,
+    'Access-Control-Allow-Origin':'*',
+    'Access-Control-Allow-Methods':'GET',
+    'Access-Control-Allow-Headers':'application/json',},
+    beforeSend: function (xhr) {
+      xhr.setRequestHeader ("Authorization", "Basic " + btoa(""));
+    },
+    success: function(response) {
+      console.log(response);
       $('#loadingsurvey3paslon1').hide();
       $('#loadingsurvey3paslon2').hide();
       $('#loadingsurvey3paslon3').hide();
@@ -361,7 +375,7 @@ function timestamp(){
   document.getElementById("timestamp").innerText = new Date(Date.now());
 }
 
-document.getElementById("version").innerText = "Version: 1.02, Copyright For Broadcast Support Internal Use";
+document.getElementById("version").innerText = "LIVE Version: 1.02, Copyright For Broadcast Support Internal Use";
 setInterval(() => {
   loadData();
   timestamp();

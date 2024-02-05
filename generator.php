@@ -112,7 +112,7 @@
     }
 
     function getPartainaszon(){
-        $propinsiArray = ['ZONA 1','ZONA 2','ZONA 3','ZONA 4','ZONA 5','ZONA 6','ZONA 7','ZONA 8','ZONA 9','ZONA 10'];
+        $propinsiArray = ['ZONA 1','ZONA 2','ZONA 3','ZONA 4','ZONA 5','ZONA 6','ZONA 7','ZONA 8','ZONA 9','ZONA 10','ZONA 11'];
         $simplexml= new SimpleXMLElement('<?xml version="1.0"?><root/>');
         $data = $simplexml->addChild('data');
         $data->addAttribute('type','list');
