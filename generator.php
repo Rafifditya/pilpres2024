@@ -27,13 +27,20 @@
     $array = array();
     $sisa = 100;
     $i = 0;
-    while($i < 24){
-        if ($i == 23){
+    $radomwin = random_int(1,15);
+    while($i < 18){
+        if ($i == 17){
             $array[] = $sisa;
         } else {
-            $result = rand_float(4,4.5);
-            $array[] = $result;
-            $sisa = $sisa - $result;
+            if ($i == $radomwin){
+                $result = rand_float(10,11.6);
+                $array[] = $result;
+                $sisa = $sisa - $result;
+            } else {
+                $result = rand_float(4.6,6);
+                $array[] = $result;
+                $sisa = $sisa - $result;
+            }
         }
         $i = $i+1;
     }
@@ -103,7 +110,7 @@
             $item->addChild("partai15",$paslon_data[14])->addAttribute('type','float');
             $item->addChild("partai16",$paslon_data[15])->addAttribute('type','float');
             $item->addChild("partai17",$paslon_data[16])->addAttribute('type','float');
-            $item->addChild("partai24",$paslon_data[23])->addAttribute('type','float');
+            $item->addChild("partai24",$paslon_data[17])->addAttribute('type','float');
             $item->addChild("datamasuk",rand_float(0,100))->addAttribute('type','float');
             $item->addChild("tingkatpartisipasi",rand_float(40,100))->addAttribute('type','float');
         }
@@ -138,7 +145,7 @@
             $item->addChild("partai15",$paslon_data[14])->addAttribute('type','float');
             $item->addChild("partai16",$paslon_data[15])->addAttribute('type','float');
             $item->addChild("partai17",$paslon_data[16])->addAttribute('type','float');
-            $item->addChild("partai24",$paslon_data[23])->addAttribute('type','float');
+            $item->addChild("partai24",$paslon_data[17])->addAttribute('type','float');
             $item->addChild("datamasuk",rand_float(0,100))->addAttribute('type','float');
             $item->addChild("tingkatpartisipasi",rand_float(40,100))->addAttribute('type','float');
         }
@@ -190,7 +197,7 @@
         $item->addChild("partai15",$paslon_data[14])->addAttribute('type','float');
         $item->addChild("partai16",$paslon_data[15])->addAttribute('type','float');
         $item->addChild("partai17",$paslon_data[16])->addAttribute('type','float');
-        $item->addChild("partai24",$paslon_data[23])->addAttribute('type','float');
+        $item->addChild("partai24",$paslon_data[17])->addAttribute('type','float');
         $item->addChild("datamasuk",rand_float(0,100))->addAttribute('type','float');
         $item->addChild("tingkatpartisipasi",rand_float(40,100))->addAttribute('type','float');
         $simplexml->addChild('created_at',date('Y-m-d H:i:s'))->addAttribute('type','str');
