@@ -31,7 +31,7 @@
         if ($i == 23){
             $array[] = $sisa;
         } else {
-            $result = rand_float(1,4);
+            $result = rand_float(4,4.5);
             $array[] = $result;
             $sisa = $sisa - $result;
         }
