@@ -110,7 +110,7 @@
 </div>
 <div class="spinner-grow spinner-grow-sm text-success" role="status">
 </div>
-    <span class="sr-only text-white" style="margin-left:5px; font-size:0.8rem; font-family:sans-serif;">LIVE Update : <span id="timestamp"></span> </span>
+    <span class="sr-only text-white" style="margin-left:5px; font-size:0.8rem; font-family:sans-serif;">TEST LIVE Update : <span id="timestamp"></span> </span>
   </div>
 
   
@@ -288,19 +288,19 @@ function loadSurvey1(){
   // $('#loadingsurvey1paslon3').show();
   // $('#loadingsurvey1total').show();
   $.ajax({
-    url: "survey1/pilpres_nasional.xml",
-    dataType: "xml",
-    success: function(xml) {
+    url: "charta_pilpres_nasional.php",
+    success: function(response) {
+      // console.log(response);
       $('#loadingsurvey1paslon1').hide();
       $('#loadingsurvey1paslon2').hide();
       $('#loadingsurvey1paslon3').hide();
       $('#loadingsurvey1total').hide();
       $('#loadingsurvey1partisipasi').hide();
-      document.getElementById("survey1paslon1").innerText = $(xml).find('paslon1').text()+" %";
-      document.getElementById("survey1paslon2").innerText = $(xml).find('paslon2').text()+" %";
-      document.getElementById("survey1paslon3").innerText = $(xml).find('paslon3').text()+" %";
-      document.getElementById("survey1total").innerText = $(xml).find('datamasuk').text()+" %";
-      document.getElementById("survey1partisipasi").innerText = $(xml).find('tingkatpartisipasi').text()+" %";
+      // document.getElementById("survey1paslon1").innerText = $(xml).find('paslon1').text()+" %";
+      // document.getElementById("survey1paslon2").innerText = $(xml).find('paslon2').text()+" %";
+      // document.getElementById("survey1paslon3").innerText = $(xml).find('paslon3').text()+" %";
+      // document.getElementById("survey1total").innerText = $(xml).find('datamasuk').text()+" %";
+      // document.getElementById("survey1partisipasi").innerText = $(xml).find('tingkatpartisipasi').text()+" %";
     }
 });
 }
@@ -311,21 +311,20 @@ function loadSurvey2(){
   // $('#loadingsurvey2paslon3').show();
   // $('#loadingsurvey2total').show();
   $.ajax({
-    type:'GET',
-    url: "survey2/pilpres_nasional.xml",
-    crossDomain:true,
-    dataType: "xml",
-    success: function(xml) {
+    url: "indikator_pilpres_nasional.php",
+    dataType:'json',
+    success: function(response) {
+      console.log(response);
       $('#loadingsurvey2paslon1').hide();
       $('#loadingsurvey2paslon2').hide();
       $('#loadingsurvey2paslon3').hide();
       $('#loadingsurvey2total').hide();
       $('#loadingsurvey2partisipasi').hide();
-      document.getElementById("survey2paslon1").innerText = $(xml).find('paslon1').text()+" %";
-      document.getElementById("survey2paslon2").innerText = $(xml).find('paslon2').text()+" %";
-      document.getElementById("survey2paslon3").innerText = $(xml).find('paslon3').text()+" %";
-      document.getElementById("survey2total").innerText = $(xml).find('datamasuk').text()+" %";
-      document.getElementById("survey2partisipasi").innerText = $(xml).find('tingkatpartisipasi').text()+" %";
+      document.getElementById("survey2paslon1").innerText = response.data.paslon1[0]+" %";
+      document.getElementById("survey2paslon2").innerText = response.data.paslon2[0]+" %";
+      document.getElementById("survey2paslon3").innerText = response.data.paslon3[0]+" %";
+      document.getElementById("survey2total").innerText = response.data.datamasuk[0]+" %";
+      document.getElementById("survey2partisipasi").innerText = response.data.tingkatpartisipasi[0]+" %";
     }
 });
 }
@@ -336,19 +335,8 @@ function loadSurvey3(){
   // $('#loadingsurvey3paslon3').show();
   // $('#loadingsurvey3total').show();
   $.ajax({
-    type:'GET',
-    url: "http://qc2024.web.id/data/TV/EMTEK/quickcount_2024.php",
-    dataType: "jsonp",
-    CORS: true ,
-    contentType:'application/json',
-    secure: true,
-    headers: {'Access-Control-Allow-Credentials' : true,
-    'Access-Control-Allow-Origin':'*',
-    'Access-Control-Allow-Methods':'GET',
-    'Access-Control-Allow-Headers':'application/json',},
-    beforeSend: function (xhr) {
-      xhr.setRequestHeader ("Authorization", "Basic " + btoa(""));
-    },
+    url: "smrc_pilpres_nasional.php",
+    dataType: "json",
     success: function(response) {
       console.log(response);
       $('#loadingsurvey3paslon1').hide();
@@ -356,17 +344,17 @@ function loadSurvey3(){
       $('#loadingsurvey3paslon3').hide();
       $('#loadingsurvey3total').hide();
       $('#loadingsurvey3partisipasi').hide();
-      document.getElementById("survey3paslon1").innerText = $(xml).find('paslon1').text()+" %";
-      document.getElementById("survey3paslon2").innerText = $(xml).find('paslon2').text()+" %";
-      document.getElementById("survey3paslon3").innerText = $(xml).find('paslon3').text()+" %";
-      document.getElementById("survey3total").innerText = $(xml).find('datamasuk').text()+" %";
-      document.getElementById("survey3partisipasi").innerText = $(xml).find('tingkatpartisipasi').text()+" %";
+      document.getElementById("survey3paslon1").innerText = response.data.paslon1[0]+" %";
+      document.getElementById("survey3paslon2").innerText = response.data.paslon2[0]+" %";
+      document.getElementById("survey3paslon3").innerText = response.data.paslon3[0]+" %";
+      document.getElementById("survey3total").innerText = response.data.datamasuk[0]+" %";
+      document.getElementById("survey3partisipasi").innerText = response.data.tingkatpartisipasi[0]+" %";
     }
 });
 }
 
 function loadData(){
-  loadSurvey1();
+  // loadSurvey1();
   loadSurvey2();
   loadSurvey3();
 }
@@ -375,7 +363,7 @@ function timestamp(){
   document.getElementById("timestamp").innerText = new Date(Date.now());
 }
 
-document.getElementById("version").innerText = "LIVE Version: 1.02, Copyright For Broadcast Support Internal Use";
+document.getElementById("version").innerText = "Version: 1.03, Copyright For Broadcast Support Internal Use";
 setInterval(() => {
   loadData();
   timestamp();
