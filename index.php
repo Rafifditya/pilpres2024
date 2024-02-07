@@ -115,10 +115,16 @@
 
   
   <div class="button-page">
-    <a href="zonasi.php" class="btn btn-dark rounded-pill" style="margin-left:5px; font-size:0.8rem; font-family:sans-serif;">Page Zonasi</a>
+    <a href="generator.php" class="btn btn-dark rounded-pill" style="margin-left:5px; font-size:0.8rem; font-family:sans-serif;">Generator</a>
   </div>
   <div class="button-page">
-    <a href="partai.php" class="btn btn-dark rounded-pill" style="margin-left:5px; font-size:0.8rem; font-family:sans-serif;">Page Partai Zonasi</a>
+    <a href="reset.php" class="btn btn-dark rounded-pill" style="margin-left:5px; font-size:0.8rem; font-family:sans-serif;">Reset</a>
+  </div>
+  <div class="button-page">
+    <a href="zonasi.php" class="btn btn-dark rounded-pill" style="margin-left:5px; font-size:0.8rem; font-family:sans-serif;">Pilpres zonasi</a>
+  </div>
+  <div class="button-page">
+    <a href="partai.php" class="btn btn-dark rounded-pill" style="margin-left:5px; font-size:0.8rem; font-family:sans-serif;">Partai Nasional</a>
   </div>
 
     <span id="version" class="sr-only text-white" style="margin-left:5px; font-size:0.7rem; font-family:sans-serif;">Version :  </span>

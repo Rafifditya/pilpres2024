@@ -115,10 +115,10 @@
 
   
   <div class="button-page">
-    <a href="zonasi.php" class="btn btn-dark rounded-pill" style="margin-left:5px; font-size:0.8rem; font-family:sans-serif;">Page Zonasi</a>
+    <a href="zonasi.php" class="btn btn-dark rounded-pill" style="margin-left:5px; font-size:0.8rem; font-family:sans-serif;">Pilpres Zonasi</a>
   </div>
   <div class="button-page">
-    <a href="partai.php" class="btn btn-dark rounded-pill" style="margin-left:5px; font-size:0.8rem; font-family:sans-serif;">Page Partai Zonasi</a>
+    <a href="partai.php" class="btn btn-dark rounded-pill" style="margin-left:5px; font-size:0.8rem; font-family:sans-serif;">Partai Nasional</a>
   </div>
 
     <span id="version" class="sr-only text-white" style="margin-left:5px; font-size:0.7rem; font-family:sans-serif;">Version :  </span>
@@ -288,19 +288,20 @@ function loadSurvey1(){
   // $('#loadingsurvey1paslon3').show();
   // $('#loadingsurvey1total').show();
   $.ajax({
-    url: "charta_pilpres_nasional.php",
+    url: "survey1/pilpres_nasional.php",
+    dataType:"json",
     success: function(response) {
-      // console.log(response);
+      console.log(response);
       $('#loadingsurvey1paslon1').hide();
       $('#loadingsurvey1paslon2').hide();
       $('#loadingsurvey1paslon3').hide();
       $('#loadingsurvey1total').hide();
       $('#loadingsurvey1partisipasi').hide();
-      // document.getElementById("survey1paslon1").innerText = $(xml).find('paslon1').text()+" %";
-      // document.getElementById("survey1paslon2").innerText = $(xml).find('paslon2').text()+" %";
-      // document.getElementById("survey1paslon3").innerText = $(xml).find('paslon3').text()+" %";
-      // document.getElementById("survey1total").innerText = $(xml).find('datamasuk').text()+" %";
-      // document.getElementById("survey1partisipasi").innerText = $(xml).find('tingkatpartisipasi').text()+" %";
+      document.getElementById("survey1paslon1").innerText = response.data.paslon1[0]+" %";
+      document.getElementById("survey1paslon2").innerText = response.data.paslon2[0]+" %";
+      document.getElementById("survey1paslon3").innerText = response.data.paslon3[0]+" %";
+      document.getElementById("survey1total").innerText = response.data.datamasuk[0]+" %";
+      document.getElementById("survey1partisipasi").innerText = response.data.tingkatpartisipasi[0]+" %";
     }
 });
 }
@@ -311,7 +312,7 @@ function loadSurvey2(){
   // $('#loadingsurvey2paslon3').show();
   // $('#loadingsurvey2total').show();
   $.ajax({
-    url: "indikator_pilpres_nasional.php",
+    url: "survey2/pilpres_nasional.php",
     dataType:'json',
     success: function(response) {
       console.log(response);
@@ -335,7 +336,7 @@ function loadSurvey3(){
   // $('#loadingsurvey3paslon3').show();
   // $('#loadingsurvey3total').show();
   $.ajax({
-    url: "smrc_pilpres_nasional.php",
+    url: "survey3/pilpres_nasional.php",
     dataType: "json",
     success: function(response) {
       console.log(response);
@@ -354,7 +355,7 @@ function loadSurvey3(){
 }
 
 function loadData(){
-  // loadSurvey1();
+  loadSurvey1();
   loadSurvey2();
   loadSurvey3();
 }

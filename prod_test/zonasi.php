@@ -110,13 +110,7 @@
     <span class="sr-only text-white" style="margin-left:5px; font-size:0.8rem; font-family:sans-serif;">Last Update : <span id="timestamp"></span> </span>
   </div>
 
-
-  <div class="button-page">
-    <a href="generator.php" class="btn btn-dark rounded-pill" style="margin-left:5px; font-size:0.8rem; font-family:sans-serif;">Generator</a>
-  </div>
-  <div class="button-page">
-    <a href="reset.php" class="btn btn-dark rounded-pill" style="margin-left:5px; font-size:0.8rem; font-family:sans-serif;">Reset</a>
-  </div>
+  
   <div class="button-page">
     <a href="index.php" class="btn btn-dark rounded-pill" style="margin-left:5px; font-size:0.8rem; font-family:sans-serif;">Pilpres Nasional</a>
   </div>
@@ -489,10 +483,10 @@ function loadSurvey1(){
   // $('#loadingsurvey1paslon3').show();
   // $('#loadingsurvey1total').show();
   $.ajax({
-    url: "survey1/pilpres_nasional_perzonasi.xml",
-    dataType: "xml",
-    success: function(xml) {
-      
+    url: "survey1/pilpres_nasional_perzonasi.php",
+    dataType: "json",
+    success: function(response) {
+      console.log(response);
       for(i=0;i<11;i++){
       $('#loadinguvery1paslon1zona'+(i+1)).hide();
       $('#loadinguvery1paslon2zona'+(i+1)).hide();
@@ -501,15 +495,14 @@ function loadSurvey1(){
       $('#loadinguvery1partisipasizona'+(i+1)).hide();
   }
 
-      let data = xml.getElementsByTagName('data')[0];
-      let size =data.childElementCount;
-
-      for(i=0;i<size;i++){
-        document.getElementById("suvery1paslon1zona"+(i+1)).innerText = data.childNodes[i].childNodes[1].textContent+"%";
-        document.getElementById("suvery1paslon2zona"+(i+1)).innerText = data.childNodes[i].childNodes[2].textContent+"%";
-        document.getElementById("suvery1paslon3zona"+(i+1)).innerText = data.childNodes[i].childNodes[3].textContent+"%";
-        document.getElementById("suvery1totalzona"+(i+1)).innerText = data.childNodes[i].childNodes[4].textContent+"%";
-        document.getElementById("suvery1partisipasizona"+(i+1)).innerText = data.childNodes[i].childNodes[5].textContent+"%";
+      // let data = xml.getElementsByTagName('data')[0];
+      // let size =data.childElementCount;
+      for(i=0;i<10;i++){
+        document.getElementById("suvery1paslon1zona"+(i+1)).innerText = response.data[i].paslon1[0]+"%";
+        document.getElementById("suvery1paslon2zona"+(i+1)).innerText = response.data[i].paslon2[0]+"%";
+        document.getElementById("suvery1paslon3zona"+(i+1)).innerText = response.data[i].paslon3[0]+"%";
+        document.getElementById("suvery1totalzona"+(i+1)).innerText = response.data[i].datamasuk[0]+"%";
+        document.getElementById("suvery1partisipasizona"+(i+1)).innerText = response.data[i].tingkatpartisipasi[0]+"%";
       }
 
     }
@@ -517,12 +510,11 @@ function loadSurvey1(){
 }
 
 function loadSurvey2(){
-
   $.ajax({
-    url: "survey2/pilpres_nasional_perzonasi.xml",
-    dataType: "xml",
-    success: function(xml) {
-
+    url: "survey2/pilpres_nasional_perzonasi.php",
+    dataType:"json",
+    success: function(response) {
+      console.log(response);
       for(i=0;i<11;i++){
       $('#loadinguvery2paslon1zona'+(i+1)).hide();
       $('#loadinguvery2paslon2zona'+(i+1)).hide();
@@ -531,14 +523,14 @@ function loadSurvey2(){
       $('#loadinguvery2partisipasizona'+(i+1)).hide();
   }
 
-      let data = xml.getElementsByTagName('data')[0];
-      let size =data.childElementCount;
-      for(i=0;i<size;i++){
-        document.getElementById("suvery2paslon1zona"+(i+1)).innerText = data.childNodes[i].childNodes[1].textContent+"%";
-        document.getElementById("suvery2paslon2zona"+(i+1)).innerText = data.childNodes[i].childNodes[2].textContent+"%";
-        document.getElementById("suvery2paslon3zona"+(i+1)).innerText = data.childNodes[i].childNodes[3].textContent+"%";
-        document.getElementById("suvery2totalzona"+(i+1)).innerText = data.childNodes[i].childNodes[4].textContent+"%";
-        document.getElementById("suvery2partisipasizona"+(i+1)).innerText = data.childNodes[i].childNodes[5].textContent+"%";
+      // let data = xml.getElementsByTagName('data')[0];
+      // let size =data.childElementCount;
+      for(i=0;i<11;i++){
+        document.getElementById("suvery2paslon1zona"+(i+1)).innerText = response.data[i].paslon1[0]+"%";
+        document.getElementById("suvery2paslon2zona"+(i+1)).innerText = response.data[i].paslon2[0]+"%";
+        document.getElementById("suvery2paslon3zona"+(i+1)).innerText = response.data[i].paslon3[0]+"%";
+        document.getElementById("suvery2totalzona"+(i+1)).innerText = response.data[i].datamasuk[0]+"%";
+        document.getElementById("suvery2partisipasizona"+(i+1)).innerText = response.data[i].tingkatpartisipasi[0]+"%";
       }
 
     }
@@ -546,12 +538,11 @@ function loadSurvey2(){
 }
 
 function loadSurvey3(){
-  
   $.ajax({
-    url: "survey3/pilpres_nasional_perzonasi.xml",
-    dataType: "xml",
-    success: function(xml) {
-
+    url: "survey3/pilpres_nasional_perzonasi.php",
+    dataType: "json",
+    success: function(response) {
+      console.log(response);
       for(i=0;i<11;i++){
       $('#loadinguvery3paslon1zona'+(i+1)).hide();
       $('#loadinguvery3paslon2zona'+(i+1)).hide();
@@ -559,23 +550,21 @@ function loadSurvey3(){
       $('#loadinguvery3totalzona'+(i+1)).hide();
       $('#loadinguvery3partisipasizona'+(i+1)).hide();
   }
-     
-  let data = xml.getElementsByTagName('data')[0];
-      let size =data.childElementCount;
-      for(i=0;i<size;i++){
-        document.getElementById("suvery3paslon1zona"+(i+1)).innerText = data.childNodes[i].childNodes[1].textContent+"%";
-        document.getElementById("suvery3paslon2zona"+(i+1)).innerText = data.childNodes[i].childNodes[2].textContent+"%";
-        document.getElementById("suvery3paslon3zona"+(i+1)).innerText = data.childNodes[i].childNodes[3].textContent+"%";
-        document.getElementById("suvery3totalzona"+(i+1)).innerText = data.childNodes[i].childNodes[4].textContent+"%";
-        document.getElementById("suvery3partisipasizona"+(i+1)).innerText = data.childNodes[i].childNodes[5].textContent+"%";
-      }
+
+    for(i=0;i<11;i++){
+          document.getElementById("suvery3paslon1zona"+(i+1)).innerText = response.data[i].paslon1[0]+"%";
+          document.getElementById("suvery3paslon2zona"+(i+1)).innerText = response.data[i].paslon2[0]+"%";
+          document.getElementById("suvery3paslon3zona"+(i+1)).innerText = response.data[i].paslon3[0]+"%";
+          document.getElementById("suvery3totalzona"+(i+1)).innerText = response.data[i].datamasuk[0]+"%";
+          document.getElementById("suvery3partisipasizona"+(i+1)).innerText = response.data[i].tingkatpartisipasi[0]+"%";
+        }
 
     }
 });
 }
 
 function loadData(){
-  loadSurvey1();
+  // loadSurvey1();
   loadSurvey2();
   loadSurvey3();
 }
@@ -586,9 +575,10 @@ function timestamp(){
 
 document.getElementById("version").innerText = "Version: 1.02,  Copyright For Broadcast Support Internal Use";
 setInterval(() => {
-  loadData();
   timestamp();
+loadData();
 }, 1000);
+
 </script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>

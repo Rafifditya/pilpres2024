@@ -116,12 +116,6 @@
 
   
   <div class="button-page">
-    <a href="generator.php" class="btn btn-dark rounded-pill" style="margin-left:5px; font-size:0.8rem; font-family:sans-serif;">Generator</a>
-  </div>
-  <div class="button-page">
-    <a href="reset.php" class="btn btn-dark rounded-pill" style="margin-left:5px; font-size:0.8rem; font-family:sans-serif;">Reset</a>
-  </div>
-  <div class="button-page">
     <a href="zonasi.php" class="btn btn-dark rounded-pill" style="margin-left:5px; font-size:0.8rem; font-family:sans-serif;">Pilpres Zonasi</a>
   </div>
   <div class="button-page">
@@ -238,9 +232,10 @@
   $.ajaxSetup({ cache: false });
 function loadSurvey1(){
   $.ajax({
-    url: "survey1/partai_nasional.xml",
-    dataType: "xml",
-    success: function(xml) {
+    url: "survey1/partai_nasional.php",
+    dataType: "json",
+    success: function(response) {
+      console.log(response);
       $('#loadingsurvey1partisipasi').hide();
       $('#loadingsurvey1datamasuk').hide();
 
@@ -250,14 +245,28 @@ function loadSurvey1(){
 
       for(i=0;i<18;i++){
         $('#loadingsurvey1partai'+(i+1)).hide();
-        if(i != 17){
-          document.getElementById("survey1partai"+(i+1)).innerText = $(xml).find('partai'+(i+1)).text()+" %";
-        } else {
-          document.getElementById("survey1partai"+(i+1)).innerText = $(xml).find('partai24').text()+" %";
-        }
+       
       }
-      document.getElementById("survey1datamasuk").innerText = $(xml).find('datamasuk').text()+" %";
-      document.getElementById("survey1partisipasi").innerText = $(xml).find('tingkatpartisipasi').text()+" %";
+        document.getElementById("survey1partai1").innerText = response.data.partai1[0]+" %";
+        document.getElementById("survey1partai2").innerText = response.data.partai2[0]+" %";
+        document.getElementById("survey1partai3").innerText = response.data.partai3[0]+" %";
+        document.getElementById("survey1partai4").innerText = response.data.partai4[0]+" %";
+        document.getElementById("survey1partai5").innerText = response.data.partai5[0]+" %";
+        document.getElementById("survey1partai6").innerText = response.data.partai6[0]+" %";
+        document.getElementById("survey1partai7").innerText = response.data.partai7[0]+" %";
+        document.getElementById("survey1partai8").innerText = response.data.partai8[0]+" %";
+        document.getElementById("survey1partai9").innerText = response.data.partai9[0]+" %";
+        document.getElementById("survey1partai10").innerText = response.data.partai10[0]+" %";
+        document.getElementById("survey1partai11").innerText = response.data.partai11[0]+" %";
+        document.getElementById("survey1partai12").innerText = response.data.partai12[0]+" %";
+        document.getElementById("survey1partai13").innerText = response.data.partai13[0]+" %";
+        document.getElementById("survey1partai14").innerText = response.data.partai14[0]+" %";
+        document.getElementById("survey1partai15").innerText = response.data.partai15[0]+" %";
+        document.getElementById("survey1partai16").innerText = response.data.partai16[0]+" %";
+        document.getElementById("survey1partai17").innerText = response.data.partai17[0]+" %";
+        document.getElementById("survey1partai18").innerText = response.data.partai24[0]+" %";
+        document.getElementById("survey1datamasuk").innerText = response.data.datamasuk[0]+" %";
+        document.getElementById("survey1partisipasi").innerText = response.data.tingkatpartisipasi[0]+" %";
     }
 });
 }
@@ -268,26 +277,36 @@ function loadSurvey2(){
   // $('#loadingsurvey2paslon3').show();
   // $('#loadingsurvey2total').show();
   $.ajax({
-    url: "survey2/partai_nasional.xml",
-    dataType: "xml",
-    success: function(xml) {
+    url: "survey2/partai_nasional.php",
+    dataType: "json",
+    success: function(response) {
+      console.log(response);
       $('#loadingsurvey2partisipasi').hide();
       $('#loadingsurvey2datamasuk').hide();
 
       for(i=0;i<18;i++){
         $('#loadingsurvey2partai'+(i+1)).hide();
       }
-
-      for(i=0;i<18;i++){
-        $('#loadingsurvey2partai'+(i+1)).hide();
-        if(i != 17){
-          document.getElementById("survey2partai"+(i+1)).innerText = $(xml).find('partai'+(i+1)).text()+" %";
-        } else {
-          document.getElementById("survey2partai"+(i+1)).innerText = $(xml).find('partai24').text()+" %";
-        }
-      }
-      document.getElementById("survey2datamasuk").innerText = $(xml).find('datamasuk').text()+" %";
-      document.getElementById("survey2partisipasi").innerText = $(xml).find('tingkatpartisipasi').text()+" %";
+        document.getElementById("survey2partai1").innerText = response.data.partai1[0]+" %";
+        document.getElementById("survey2partai2").innerText = response.data.partai2[0]+" %";
+        document.getElementById("survey2partai3").innerText = response.data.partai3[0]+" %";
+        document.getElementById("survey2partai4").innerText = response.data.partai4[0]+" %";
+        document.getElementById("survey2partai5").innerText = response.data.partai5[0]+" %";
+        document.getElementById("survey2partai6").innerText = response.data.partai6[0]+" %";
+        document.getElementById("survey2partai7").innerText = response.data.partai7[0]+" %";
+        document.getElementById("survey2partai8").innerText = response.data.partai8[0]+" %";
+        document.getElementById("survey2partai9").innerText = response.data.partai9[0]+" %";
+        document.getElementById("survey2partai10").innerText = response.data.partai10[0]+" %";
+        document.getElementById("survey2partai11").innerText = response.data.partai11[0]+" %";
+        document.getElementById("survey2partai12").innerText = response.data.partai12[0]+" %";
+        document.getElementById("survey2partai13").innerText = response.data.partai13[0]+" %";
+        document.getElementById("survey2partai14").innerText = response.data.partai14[0]+" %";
+        document.getElementById("survey2partai15").innerText = response.data.partai15[0]+" %";
+        document.getElementById("survey2partai16").innerText = response.data.partai16[0]+" %";
+        document.getElementById("survey2partai17").innerText = response.data.partai17[0]+" %";
+        document.getElementById("survey2partai18").innerText = response.data.partai24[0]+" %";
+        document.getElementById("survey2datamasuk").innerText = response.data.datamasuk[0]+" %";
+        document.getElementById("survey2partisipasi").innerText = response.data.tingkatpartisipasi[0]+" %";
     }
 });
 }
@@ -298,9 +317,10 @@ function loadSurvey3(){
   // $('#loadingsurvey3paslon3').show();
   // $('#loadingsurvey3total').show();
   $.ajax({
-    url: "survey3/partai_nasional.xml",
-    dataType: "xml",
-    success: function(xml) {
+    url: "survey3/partai_nasional.php",
+    dataType: "json",
+    success: function(response) {
+      console.log(response);
       $('#loadingsurvey3partisipasi').hide();
       $('#loadingsurvey3datamasuk').hide();
 
@@ -308,16 +328,26 @@ function loadSurvey3(){
         $('#loadingsurvey3partai'+(i+1)).hide();
       }
 
-      for(i=0;i<18;i++){
-        $('#loadingsurvey3partai'+(i+1)).hide();
-        if(i != 17){
-          document.getElementById("survey3partai"+(i+1)).innerText = $(xml).find('partai'+(i+1)).text()+" %";
-        } else {
-          document.getElementById("survey3partai"+(i+1)).innerText = $(xml).find('partai24').text()+" %";
-        }
-      }
-      document.getElementById("survey3datamasuk").innerText = $(xml).find('datamasuk').text()+" %";
-      document.getElementById("survey3partisipasi").innerText = $(xml).find('tingkatpartisipasi').text()+" %";
+       document.getElementById("survey3partai1").innerText = response.data.partai1[0]+" %";
+        document.getElementById("survey3partai2").innerText = response.data.partai2[0]+" %";
+        document.getElementById("survey3partai3").innerText = response.data.partai3[0]+" %";
+        document.getElementById("survey3partai4").innerText = response.data.partai4[0]+" %";
+        document.getElementById("survey3partai5").innerText = response.data.partai5[0]+" %";
+        document.getElementById("survey3partai6").innerText = response.data.partai6[0]+" %";
+        document.getElementById("survey3partai7").innerText = response.data.partai7[0]+" %";
+        document.getElementById("survey3partai8").innerText = response.data.partai8[0]+" %";
+        document.getElementById("survey3partai9").innerText = response.data.partai9[0]+" %";
+        document.getElementById("survey3partai10").innerText = response.data.partai10[0]+" %";
+        document.getElementById("survey3partai11").innerText = response.data.partai11[0]+" %";
+        document.getElementById("survey3partai12").innerText = response.data.partai12[0]+" %";
+        document.getElementById("survey3partai13").innerText = response.data.partai13[0]+" %";
+        document.getElementById("survey3partai14").innerText = response.data.partai14[0]+" %";
+        document.getElementById("survey3partai15").innerText = response.data.partai15[0]+" %";
+        document.getElementById("survey3partai16").innerText = response.data.partai16[0]+" %";
+        document.getElementById("survey3partai17").innerText = response.data.partai17[0]+" %";
+        document.getElementById("survey3partai18").innerText = response.data.partai24[0]+" %";
+        document.getElementById("survey3datamasuk").innerText = response.data.datamasuk[0]+" %";
+        document.getElementById("survey3partisipasi").innerText = response.data.tingkatpartisipasi[0]+" %";
     }
 });
 }
@@ -334,10 +364,9 @@ function timestamp(){
 
 document.getElementById("version").innerText = "Version: 1.02, Copyright for Broadcast Support Internal Use";
 setInterval(() => {
-  loadData();
   timestamp();
+  loadData();
 }, 1000);
-
 </script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
