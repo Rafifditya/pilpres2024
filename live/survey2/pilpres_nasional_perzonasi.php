@@ -1,6 +1,6 @@
 <?php 
-    $xml=simplexml_load_file("https://api-qc.chartapolitika.com/v1/parsing-data/MSE002/zona?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaS1xYy5jaGFydGFwb2xpdGlrYS5jb20vdjEvcmVnaXN0ZXIiLCJpYXQiOjE3MDY3ODcyMTYsIm5iZiI6MTcwNjc4NzIxNiwianRpIjoid3JiWWpZcFRKY25VMTNLbSIsInN1YiI6IjUxZmRhMDFjLWI2M2QtNDk4NC04NmRiLThiOTEwNDEzZjRhNCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.UTv_x5ksa7aaxLPxPL6FlJrfU6XflI4YcgHhdtJxwrU&type=xml") or die("Error: Cannot create object");
-    
+   $xml=simplexml_load_file("https://hitungcepat.web.id/data/TV/EMTEK/pilpres_nasional_perzonasi.xml") or die("Error: Cannot create object");
+    $data = array();
     for($i=0;$i<11;$i++){
         $data [] = array(
             'namazonasi' => $xml->data->item[$i]->namazonasi[0],
@@ -11,12 +11,11 @@
             'tingkatpartisipasi' => $xml->data->item[$i]->tingkatpartisipasi[0],
         );
     }
+    // echo $xml->data->item[0]->namazonasi;
     $response = [];
     $response['status'] = 'success';
     $response['code'] = '200';
-    $response['message'] = 'inject charta pilpres nasional perzonasi';
+    $response['message'] = 'inject indikator pilpres nasional perzonasi';
     $response['data'] = $data;
     echo json_encode($response);
-  
-  
 ?>

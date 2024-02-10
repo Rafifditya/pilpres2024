@@ -1,7 +1,6 @@
 <?php 
-    $xml=simplexml_load_file("https://api-qc.chartapolitika.com/v1/parsing-data/MSE004?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaS1xYy5jaGFydGFwb2xpdGlrYS5jb20vdjEvcmVnaXN0ZXIiLCJpYXQiOjE3MDY3ODcyMTYsIm5iZiI6MTcwNjc4NzIxNiwianRpIjoid3JiWWpZcFRKY25VMTNLbSIsInN1YiI6IjUxZmRhMDFjLWI2M2QtNDk4NC04NmRiLThiOTEwNDEzZjRhNCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.UTv_x5ksa7aaxLPxPL6FlJrfU6XflI4YcgHhdtJxwrU&type=xml") or die("Error: Cannot create object");
-   
-$data = array( 
+   $xml=simplexml_load_file("https://qc2024.web.id/data/TV/EMTEK/partai_nasional.xml") or die("Error: Cannot create object");
+   $data = array( 
     'partai1' => $xml->data->item->partai1[0],
     'partai2' => $xml->data->item->partai2[0],
     'partai3' => $xml->data->item->partai3[0],
@@ -26,10 +25,9 @@ $data = array(
     $response = [];
     $response['status'] = 'success';
     $response['code'] = '200';
-    $response['message'] = 'inject charta partai nasional';
+    $response['message'] = 'inject SMRC pilpres nasional';
     $response['data'] = $data;
 
+// print_r($xml->data->item);
     echo json_encode($response);
-  
-  
 ?>
