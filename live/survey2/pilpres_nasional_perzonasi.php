@@ -15,7 +15,7 @@
     $response = [];
     $response['status'] = 'success';
     $response['code'] = '200';
-    $response['message'] = 'inject indikator pilpres nasional perzonasi';
+    $response['message'] = 'parsing indikator pilpres nasional perzonasi';
     $response['data'] = $data;
     echo json_encode($response);
 ?>

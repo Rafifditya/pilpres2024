@@ -486,7 +486,6 @@ function loadSurvey1(){
     url: "survey1/pilpres_nasional_perzonasi.php",
     dataType: "json",
     success: function(response) {
-      console.log(response);
       for(i=0;i<11;i++){
       $('#loadinguvery1paslon1zona'+(i+1)).hide();
       $('#loadinguvery1paslon2zona'+(i+1)).hide();
@@ -517,7 +516,6 @@ function loadSurvey2(){
     url: "survey2/pilpres_nasional_perzonasi.php",
     dataType:"json",
     success: function(response) {
-      console.log(response);
       for(i=0;i<11;i++){
       $('#loadinguvery2paslon1zona'+(i+1)).hide();
       $('#loadinguvery2paslon2zona'+(i+1)).hide();
@@ -548,7 +546,6 @@ function loadSurvey3(){
     url: "survey3/pilpres_nasional_perzonasi.php",
     dataType: "json",
     success: function(response) {
-      console.log(response);
       for(i=0;i<11;i++){
       $('#loadinguvery3paslon1zona'+(i+1)).hide();
       $('#loadinguvery3paslon2zona'+(i+1)).hide();

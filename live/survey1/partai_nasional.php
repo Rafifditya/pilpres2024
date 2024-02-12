@@ -26,7 +26,7 @@ $data = array(
     $response = [];
     $response['status'] = 'success';
     $response['code'] = '200';
-    $response['message'] = 'inject charta partai nasional';
+    $response['message'] = 'parsing charta partai nasional';
     $response['data'] = $data;
 
 // print_r($xml->data->item);

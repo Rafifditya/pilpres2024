@@ -25,7 +25,7 @@
     $response = [];
     $response['status'] = 'success';
     $response['code'] = '200';
-    $response['message'] = 'inject SMRC pilpres nasional';
+    $response['message'] = 'parsing SMRC pilpres nasional';
     $response['data'] = $data;
 
 // print_r($xml->data->item);

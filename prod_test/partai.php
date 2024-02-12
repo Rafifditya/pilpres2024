@@ -235,7 +235,6 @@ function loadSurvey1(){
     url: "survey1/partai_nasional.php",
     dataType: "json",
     success: function(response) {
-      console.log(response);
       $('#loadingsurvey1partisipasi').hide();
       $('#loadingsurvey1datamasuk').hide();
 
@@ -284,7 +283,6 @@ function loadSurvey2(){
     url: "survey2/partai_nasional.php",
     dataType: "json",
     success: function(response) {
-      console.log(response);
       $('#loadingsurvey2partisipasi').hide();
       $('#loadingsurvey2datamasuk').hide();
 
@@ -328,7 +326,6 @@ function loadSurvey3(){
     url: "survey3/partai_nasional.php",
     dataType: "json",
     success: function(response) {
-      console.log(response);
       $('#loadingsurvey3partisipasi').hide();
       $('#loadingsurvey3datamasuk').hide();
 
