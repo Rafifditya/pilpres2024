@@ -26,7 +26,7 @@ $data = array(
     $response = [];
     $response['status'] = 'success';
     $response['code'] = '200';
-    $response['message'] = 'inject charta partai nasional';
+    $response['message'] = 'Parsing charta partai nasional';
     $response['data'] = $data;
 
     echo json_encode($response);

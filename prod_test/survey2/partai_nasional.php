@@ -25,7 +25,7 @@
     $response = [];
     $response['status'] = 'success';
     $response['code'] = '200';
-    $response['message'] = 'inject indikator partai nasional';
+    $response['message'] = 'Parsing indikator partai nasional';
     $response['data'] = $data;
 
 // print_r($xml->data->item);

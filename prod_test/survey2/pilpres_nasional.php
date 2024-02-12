@@ -10,7 +10,7 @@
     $response = [];
     $response['status'] = 'success';
     $response['code'] = '200';
-    $response['message'] = 'inject indikator pilpres nasional';
+    $response['message'] = 'Parsing indikator pilpres nasional';
     $response['data'] = $data;
 
     echo json_encode($response);

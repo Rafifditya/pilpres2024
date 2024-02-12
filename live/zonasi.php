@@ -504,8 +504,11 @@ function loadSurvey1(){
         document.getElementById("suvery1totalzona"+(i+1)).innerText = response.data[i].datamasuk[0]+"%";
         document.getElementById("suvery1partisipasizona"+(i+1)).innerText = response.data[i].tingkatpartisipasi[0]+"%";
       }
-
-    }
+      loadSurvey1();
+    },error:function(xhr,error){
+      console.log("CHARTA :"+error);
+      loadSurvey1();
+    },timeout: 5000
 });
 }
 
@@ -532,8 +535,11 @@ function loadSurvey2(){
         document.getElementById("suvery2totalzona"+(i+1)).innerText = response.data[i].datamasuk[0]+"%";
         document.getElementById("suvery2partisipasizona"+(i+1)).innerText = response.data[i].tingkatpartisipasi[0]+"%";
       }
-
-    }
+      loadSurvey2();
+    },error:function(xhr,error){
+      console.log("INDIKATOR :"+error);
+      loadSurvey2();
+    },timeout: 5000
 });
 }
 
@@ -558,8 +564,11 @@ function loadSurvey3(){
           document.getElementById("suvery3totalzona"+(i+1)).innerText = response.data[i].datamasuk[0]+"%";
           document.getElementById("suvery3partisipasizona"+(i+1)).innerText = response.data[i].tingkatpartisipasi[0]+"%";
         }
-
-    }
+      loadSurvey3();
+    },error:function(xhr,error){
+      console.log("SMRC :"+error)
+      loadSurvey3();
+    },timeout: 5000
 });
 }
 
@@ -576,8 +585,8 @@ function timestamp(){
 document.getElementById("version").innerText = "Version: 1.02,  Copyright For Broadcast Support Internal Use";
 setInterval(() => {
   timestamp();
-loadData();
 }, 1000);
+loadData();
 
 </script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

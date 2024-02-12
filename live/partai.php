@@ -267,7 +267,12 @@ function loadSurvey1(){
         document.getElementById("survey1partai18").innerText = response.data.partai24[0]+" %";
         document.getElementById("survey1datamasuk").innerText = response.data.datamasuk[0]+" %";
         document.getElementById("survey1partisipasi").innerText = response.data.tingkatpartisipasi[0]+" %";
-    }
+        loadSurvey1();
+
+    },error(xhr,error){
+      console.log("CHARTA :"+error);
+      loadSurvey1();
+    },timeout: 5000
 });
 }
 
@@ -307,7 +312,12 @@ function loadSurvey2(){
         document.getElementById("survey2partai18").innerText = response.data.partai24[0]+" %";
         document.getElementById("survey2datamasuk").innerText = response.data.datamasuk[0]+" %";
         document.getElementById("survey2partisipasi").innerText = response.data.tingkatpartisipasi[0]+" %";
-    }
+      loadSurvey2();
+
+    },error(xhr,error){
+      console.log("INDIKATOR :"+error);
+      loadSurvey2();
+    },timeout: 5000
 });
 }
 
@@ -348,7 +358,11 @@ function loadSurvey3(){
         document.getElementById("survey3partai18").innerText = response.data.partai24[0]+" %";
         document.getElementById("survey3datamasuk").innerText = response.data.datamasuk[0]+" %";
         document.getElementById("survey3partisipasi").innerText = response.data.tingkatpartisipasi[0]+" %";
-    }
+      loadSurvey3();
+    },error:function(xhr,error){
+      console.log("SMRC :"+error);
+      loadSurvey3();
+    },timeout: 5000
 });
 }
 
@@ -365,8 +379,9 @@ function timestamp(){
 document.getElementById("version").innerText = "Version: 1.02, Copyright for Broadcast Support Internal Use";
 setInterval(() => {
   timestamp();
-  loadData();
 }, 1000);
+loadData();
+
 </script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
