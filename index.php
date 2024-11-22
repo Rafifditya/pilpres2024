@@ -13,7 +13,7 @@
 <style>
  
   body {
-    background-image: url(image/bg_nas_new.png);
+    background-image: url(image/Pilkada_BG.jpeg);
     background-size: 100%;
     font-family: 'Poppins', sans-serif;
    position: absolute;
@@ -50,9 +50,9 @@
 
 
   .img-survey{
-    width: 100px;
-    height: 60px;
-    margin-left: 100px;
+    width: 150px;
+    height: 80px;
+    margin-left: 80px;
   }
 
   .total-suara {
@@ -71,6 +71,7 @@
   b {
     font-size: 1.1rem;
   }
+  
   
   .update-stats{
     float: right;
@@ -106,183 +107,341 @@
 <body>
 <main>
   <div class="update-stats bg-dark rounded-pill">
-  <div class="spinner-border spinner-border-sm text-success"  role="status">
-</div>
-<div class="spinner-grow spinner-grow-sm text-success" role="status">
-</div>
-    <span class="sr-only text-white" style="margin-left:5px; font-size:0.8rem; font-family:sans-serif;">Dummy LIVE Update : <span id="timestamp"></span> </span>
+  <div class="spinner-grow spinner-grow-sm text-success" role="status"></div>
+    <span class="sr-only text-white" style="margin-left:5px; font-size:1.1rem; font-family:sans-serif;">Dummy LIVE Update : <span id="timestamp"></span> </span>
   </div>
-
   
   <div class="button-page">
-    <a href="generator.php" class="btn btn-dark rounded-pill" style="margin-left:5px; font-size:0.8rem; font-family:sans-serif;">Generator</a>
+    <a href="generator.php" class="btn btn-dark rounded-pill" style="margin-left:5px; font-size:1rem; font-family:sans-serif;">Generator</a>
   </div>
   <div class="button-page">
-    <a href="reset.php" class="btn btn-dark rounded-pill" style="margin-left:5px; font-size:0.8rem; font-family:sans-serif;">Reset</a>
-  </div>
-  <div class="button-page">
-    <a href="zonasi.php" class="btn btn-dark rounded-pill" style="margin-left:5px; font-size:0.8rem; font-family:sans-serif;">Pilpres zonasi</a>
-  </div>
-  <div class="button-page">
-    <a href="partai.php" class="btn btn-dark rounded-pill" style="margin-left:5px; font-size:0.8rem; font-family:sans-serif;">Partai Nasional</a>
+    <a href="reset.php" class="btn btn-dark rounded-pill" style="margin-left:5px; font-size:1rem; font-family:sans-serif;">Reset</a>
   </div>
 
-    <span id="version" class="sr-only text-white" style="margin-left:5px; font-size:0.7rem; font-family:sans-serif;">Version :  </span>
 
 
   <div class="container-fluid">
-  <div class="row paslon">
-  <div class="col text-center">
-    </div>
-    <div class="col text-center" style="padding-left: 85px;">
-      <img src="image/anies.png" class="img-paslon">
-      <br>
-      <br>
-      <p><b>Anies Baswedan
-      <br>
-      Muhaimin Iskandar</b>
-    </p>
-    </div>
-    <div class="col text-center">
-      <img src="image/prabowo.png" class="img-paslon">
-      <br>
-      <br>
-      <p><b>Prabowo Subianto
-      <br>
-      Gibran Rakabuming</b>
-    </p>
-    </div>
-    <div class="col text-center">
-      <img src="image/ganjar.png" class="img-paslon">
-      <br>
-      <br>
-      <p><b>Ganjar Pranowo
-      <br>
-      Mahfud MD</b>
-    </p>
-    </div>
-    <div class="col text-center total-suara">
-      <p><b>Total Data <br> Masuk</b></p>
-    </div>
-    <div class="col text-center total-suara">
-      <p><b>Tingkat <br> Partisipasi</b></p>
-    </div>
-  </div>
+  <img src="image/Pilkada_Logo.png" class="img-survey"/>
+      <div class="row suara-paslon rounded">
+        <table class="table table-dark table-responsive text-center">
+          <thead>
+            <tr >
+              <td>
+                SUMATERA <br> UTARA
+              </td>
+              <td>
+              1 <br> Bobby Nasution - Surya
+              </td>
+              <td>
+              2 <br> Edy Rahmayadi - Hasan Basri Sagala
+              </td>
+              <td>
+                TOTAL DATA MASUK
+              </td>
+              <td>
+                TINGKAT PARTISIPASI
+              </td>
+              <td>
+              </td>
+              <td>
+              </td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr >
+            <td style="background-color: #5c55f1; color: white;">
+              INDIKATOR
+            </td>
+            <td style="background-color: #5c55f1; color: white;">00,00%</td>
+            <td style="background-color: #5c55f1; color: white;">00,00%</td>
+            <td style="background-color: #5c55f1; color: white;">00,00%</td>
+            <td style="background-color: #5c55f1; color: white;">00,00%</td>
+            <td style="background-color: #5c55f1; color: white;"></td>
+            <td style="background-color: #5c55f1; color: white;"></td>
+          
+            </tr>
+            <tr>
+            <td style="background-color: #c73332; color: white;">
+              POLTRACKING
+            </td>
+            <td style="background-color: #c73332; color: white;">00,00%</td>
+            <td style="background-color: #c73332; color: white;">00,00%</td>
+            <td style="background-color: #c73332; color: white;">00,00%</td>
+            <td style="background-color: #c73332; color: white;">00,00%</td>
+            <td style="background-color: #c73332; color: white;"></td>
+            <td style="background-color: #c73332; color: white;"></td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
 
-  <div class="row suara-paslon bg-white rounded">
-  <div class="col text-center suara-persen">
-    <img src="image/charta.png" class="img-survey">
-    </div> 
-  <div class="col text-center persen" style="padding-left:80px;">
-    <button class="btn btn-dark btn-persen rounded">
-    <div class="spinner-border text-light" id="loadingsurvey1paslon1" role="status"></div>
-      <b id="survey1paslon1"></b>
-      </button>
-    </div>
-    <div class="col text-center persen">
-      <button class="btn btn-dark btn-persen rounded">
-        <div class="spinner-border text-light" id="loadingsurvey1paslon2" role="status"></div>
+      <div class="row suara-paslon rounded">
+        <table class="table table-dark table-responsive text-center">
+          <thead>
+            <tr >
+              <td>
+                BANTEN
+              </td>
+              <td>
+              1<br>Airin Rachmi Diany - Ade Sumardi
+              </td>
+              <td>
+              2<br>Andra Soni - Dimyati Natakusumah
+              </td>
+              <td>
+                TOTAL DATA MASUK
+              </td>
+              <td>
+                TINGKAT PARTISIPASI
+              </td>
+              <td>
+              </td>
+              <td>
+              </td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr >
+            <td style="background-color: #5c55f1; color: white;">
+              INDIKATOR
+            </td>
+            <td style="background-color: #5c55f1; color: white;">00,00%</td>
+            <td style="background-color: #5c55f1; color: white;">00,00%</td>
+            <td style="background-color: #5c55f1; color: white;">00,00%</td>
+            <td style="background-color: #5c55f1; color: white;">00,00%</td>
+            <td style="background-color: #5c55f1; color: white;"></td>
+            <td style="background-color: #5c55f1; color: white;"></td>
+          
+            </tr>
+            <tr>
+            <td style="background-color: #c73332; color: white;">
+              POLTRACKING
+            </td>
+            <td style="background-color: #c73332; color: white;">00,00%</td>
+            <td style="background-color: #c73332; color: white;">00,00%</td>
+            <td style="background-color: #c73332; color: white;">00,00%</td>
+            <td style="background-color: #c73332; color: white;">00,00%</td>
+            <td style="background-color: #c73332; color: white;"></td>
+            <td style="background-color: #c73332; color: white;"></td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
 
-        <b id="survey1paslon2"></b>
-      </button>
-    </div>
-    <div class="col text-center persen">
-    <button class="btn btn-dark btn-persen rounded">
-      <div class="spinner-border text-light" id="loadingsurvey1paslon3" role="status"></div>
+      <div class="row suara-paslon rounded">
+        <table class="table table-dark table-responsive text-center">
+          <thead>
+            <tr >
+              <td>
+                DKI JAKARTA
+              </td>
+              <td>
+              1<br>Ridwan Kamil - Suswono
+              </td>
+              <td>
+              2<br>Dharma Pongrekun - Kun Wardana
+              </td>
+              <td>
+              3<br>Pramono Anung - Rano Karno
+              </td>
+              <td>
+                TOTAL DATA MASUK
+              </td>
+              <td>
+                TINGKAT PARTISIPASI
+              </td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr >
+            <td style="background-color: #5c55f1; color: white;">
+              INDIKATOR
+            </td>
+            <td style="background-color: #5c55f1; color: white;">00,00%</td>
+            <td style="background-color: #5c55f1; color: white;">00,00%</td>
+            <td style="background-color: #5c55f1; color: white;">00,00%</td>
+            <td style="background-color: #5c55f1; color: white;">00,00%</td>
+            <td style="background-color: #5c55f1; color: white;">00,00%</td>
+          
+            </tr>
+            <tr>
+            <td style="background-color: #c73332; color: white;">
+              POLTRACKING
+            </td>
+            <td style="background-color: #c73332; color: white;">00,00%</td>
+            <td style="background-color: #c73332; color: white;">00,00%</td>
+            <td style="background-color: #c73332; color: white;">00,00%</td>
+            <td style="background-color: #c73332; color: white;">00,00%</td>
+            <td style="background-color: #c73332; color: white;">00,00%</td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
 
-        <b id="survey1paslon3"></b>
-      </button>
-    </div>
-    <div class="col text-center persen">
-    <button class="btn btn-dark btn-persen rounded">
-      <div class="spinner-border text-light" id="loadingsurvey1total" role="status"></div>
-        <b id="survey1total"></b>
-      </button>
-    </div>
-    <div class="col text-center persen">
-    <button class="btn btn-dark btn-persen rounded">
-      <div class="spinner-border text-light" id="loadingsurvey1partisipasi" role="status"></div>
-        <b id="survey1partisipasi"></b>
-      </button>
-    </div>
-  </div>
+      <div class="row suara-paslon rounded">
+        <table class="table table-dark table-responsive text-center">
+          <thead>
+            <tr >
+              <td>
+                JAWA <br> BARAT
+              </td>
+              <td>
+              1<br>Acep Adang Ruhiat - Gitalis Dwi Natarina
+              </td>
+              <td>
+              2<br>Jeje Wiradinata - Ronal Supraja
+              </td>
+              <td>
+              3<br>Ahmad Syaikhu - Ilham Habibie
+              </td>
+              <td>
+              4<br>Dedi Mulyadi - Erwan Setiawan
+              </td>
+              <td>
+                TOTAL DATA MASUK
+              </td>
+              <td>
+                TINGKAT PARTISIPASI
+              </td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr >
+            <td style="background-color: #5c55f1; color: white;">
+              INDIKATOR
+            </td>
+            <td style="background-color: #5c55f1; color: white;">00,00%</td>
+            <td style="background-color: #5c55f1; color: white;">00,00%</td>
+            <td style="background-color: #5c55f1; color: white;">00,00%</td>
+            <td style="background-color: #5c55f1; color: white;">00,00%</td>
+            <td style="background-color: #5c55f1; color: white;">00,00%</td>
+            <td style="background-color: #5c55f1; color: white;">00,00%</td>
+            </tr>
+            <tr>
+            <td style="background-color: #c73332; color: white;">
+              POLTRACKING
+            </td>
+            <td style="background-color: #c73332; color: white;">00,00%</td>
+            <td style="background-color: #c73332; color: white;">00,00%</td>
+            <td style="background-color: #c73332; color: white;">00,00%</td>
+            <td style="background-color: #c73332; color: white;">00,00%</td>
+            <td style="background-color: #c73332; color: white;">00,00%</td>
+            <td style="background-color: #c73332; color: white;">00,00%</td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
 
-  <div class="row suara-paslon bg-white rounded">
-  <div class="col text-center suara-persen">
-    <img src="image/indikator.png" class="img-survey">
-    </div> 
-  <div class="col text-center persen" style="padding-left:80px;">
-    <button class="btn btn-dark btn-persen rounded">
-    <div class="spinner-border text-light" id="loadingsurvey2paslon1" role="status"></div>
-      <b id="survey2paslon1"></b>
-      </button>
-    </div>
-    <div class="col text-center persen">
-      <button class="btn btn-dark btn-persen rounded">
-    <div class="spinner-border text-light" id="loadingsurvey2paslon2" role="status"></div>
-        <b id="survey2paslon2"></b>
-      </button>
-    </div>
-    <div class="col text-center persen">
-    <button class="btn btn-dark btn-persen rounded">
-    <div class="spinner-border text-light" id="loadingsurvey2paslon3" role="status"></div>
-    <b id="survey2paslon3"></b>
-      </button>
-    </div>
-    <div class="col text-center persen">
-    <button class="btn btn-dark btn-persen rounded">
-    <div class="spinner-border text-light" id="loadingsurvey2total" role="status"></div>
-        <b id="survey2total"></b>
-      </button>
-    </div>
-    <div class="col text-center persen">
-    <button class="btn btn-dark btn-persen rounded">
-      <div class="spinner-border text-light" id="loadingsurvey2partisipasi" role="status"></div>
-        <b id="survey2partisipasi"></b>
-      </button>
-    </div>
-  </div>
+      <div class="row suara-paslon rounded">
+        <table class="table table-dark table-responsive text-center">
+          <thead>
+            <tr >
+              <td>
+                JAWA <br> TENGAH
+              </td>
+              <td>
+              1<br>Andika Perkasa - Hendrar Prihadi
+              </td>
+              <td>
+              2<br>Ahmad Luthfi - Taj Yasin Maimoen
+              </td>
+              <td>
+                TOTAL DATA MASUK
+              </td>
+              <td>
+                TINGKAT PARTISIPASI
+              </td>
+              <td>
+              </td>
+              <td>
+              </td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr >
+            <td style="background-color: #5c55f1; color: white;">
+              INDIKATOR
+            </td>
+            <td style="background-color: #5c55f1; color: white;">00,00%</td>
+            <td style="background-color: #5c55f1; color: white;">00,00%</td>
+            <td style="background-color: #5c55f1; color: white;">00,00%</td>
+            <td style="background-color: #5c55f1; color: white;">00,00%</td>
+            <td style="background-color: #5c55f1; color: white;"></td>
+            <td style="background-color: #5c55f1; color: white;"></td>
+          
+            </tr>
+            <tr>
+            <td style="background-color: #c73332; color: white;">
+              POLTRACKING
+            </td>
+            <td style="background-color: #c73332; color: white;">00,00%</td>
+            <td style="background-color: #c73332; color: white;">00,00%</td>
+            <td style="background-color: #c73332; color: white;">00,00%</td>
+            <td style="background-color: #c73332; color: white;">00,00%</td>
+            <td style="background-color: #c73332; color: white;"></td>
+            <td style="background-color: #c73332; color: white;"></td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
 
-  <div class="row suara-paslon bg-white rounded">
-  <div class="col text-center suara-persen">
-    <img src="image/v1_20.png" class="img-survey">
-    </div> 
-  <div class="col text-center persen" style="padding-left:80px;">
-    <button class="btn btn-dark btn-persen rounded">
-    <div class="spinner-border text-light" id="loadingsurvey3paslon1" role="status"></div>
-      <b id="survey3paslon1"></b>
-      </button>
-    </div>
-    <div class="col text-center persen">
-      <button class="btn btn-dark btn-persen rounded">
-    <div class="spinner-border text-light" id="loadingsurvey3paslon2" role="status"></div>
+      <div class="row suara-paslon rounded">
+        <table class="table table-dark table-responsive text-center">
+          <thead>
+            <tr >
+              <td>
+                JAWA <br> TIMUR
+              </td>
+              <td>
+              1 <br> Luluk Nur Hamidah - Lukmanul Khakim
+              </td>
+              <td>
+              2 <br> Khoffifah Indar Parawansa - Emil Dardak
+              </td>
+              <td>
+              3 <br> Tri Rismaharini - Zharul Azhar Asumta
+              </td>
+              <td>
+                TOTAL DATA MASUK
+              </td>
+              <td>
+                TINGKAT PARTISIPASI
+              </td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr >
+            <td style="background-color: #5c55f1; color: white;">
+              INDIKATOR
+            </td>
+            <td style="background-color: #5c55f1; color: white;">00,00%</td>
+            <td style="background-color: #5c55f1; color: white;">00,00%</td>
+            <td style="background-color: #5c55f1; color: white;">00,00%</td>
+            <td style="background-color: #5c55f1; color: white;">00,00%</td>
+            <td style="background-color: #5c55f1; color: white;">00,00%</td>
+          
+            </tr>
+            <tr>
+            <td style="background-color: #c73332; color: white;">
+              POLTRACKING
+            </td>
+            <td style="background-color: #c73332; color: white;">00,00%</td>
+            <td style="background-color: #c73332; color: white;">00,00%</td>
+            <td style="background-color: #c73332; color: white;">00,00%</td>
+            <td style="background-color: #c73332; color: white;">00,00%</td>
+            <td style="background-color: #c73332; color: white;">00,00%</td>
+            </tr>
+            
+          </tbody>
+        </table>
 
-      <b id="survey3paslon2"></b>
-      </button>
-    </div>
-    <div class="col text-center persen">
-    <button class="btn btn-dark btn-persen rounded">
-    <div class="spinner-border text-light" id="loadingsurvey3paslon3" role="status"></div>
-
-        <b id="survey3paslon3"></b>
-      </button>
-    </div>
-    <div class="col text-center persen">
-    <button class="btn btn-dark btn-persen rounded">
-    <div class="spinner-border text-light" id="loadingsurvey3total" role="status"></div>
-
-        <b id="survey3total"></b>
-      </button>
-    </div>
-    <div class="col text-center persen">
-    <button class="btn btn-dark btn-persen rounded">
-      <div class="spinner-border text-light" id="loadingsurvey3partisipasi" role="status"></div>
-        <b id="survey3partisipasi"></b>
-      </button>
-    </div>
-  </div>
-
-  </div>
+        </div>
+      </div>
 </main>
 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -294,7 +453,7 @@ function loadSurvey1(){
   // $('#loadingsurvey1paslon3').show();
   // $('#loadingsurvey1total').show();
   $.ajax({
-    url: "survey1/pilpres_nasional.xml",
+    url: "survey1/pilkada_nasional.xml",
     dataType: "xml",
     success: function(xml) {
       $('#loadingsurvey1paslon1').hide();
@@ -302,11 +461,10 @@ function loadSurvey1(){
       $('#loadingsurvey1paslon3').hide();
       $('#loadingsurvey1total').hide();
       $('#loadingsurvey1partisipasi').hide();
-      document.getElementById("survey1paslon1").innerText = $(xml).find('paslon1').text()+" %";
-      document.getElementById("survey1paslon2").innerText = $(xml).find('paslon2').text()+" %";
-      document.getElementById("survey1paslon3").innerText = $(xml).find('paslon3').text()+" %";
-      document.getElementById("survey1total").innerText = $(xml).find('datamasuk').text()+" %";
-      document.getElementById("survey1partisipasi").innerText = $(xml).find('tingkatpartisipasi').text()+" %";
+      document.getElementById("survey1paslon1").innerText = $(xml).find('provinsi1_paslon1').text()+" %";
+      document.getElementById("survey1paslon2").innerText = $(xml).find('provinsi1_paslon2').text()+" %";
+      document.getElementById("survey1total").innerText = $(xml).find('datamasuk_provinsi1').text()+" %";
+      document.getElementById("survey1partisipasi").innerText = $(xml).find('tingkatpartisipasi_provinsi1').text()+" %";
     }
 });
 }
@@ -367,7 +525,6 @@ function timestamp(){
   document.getElementById("timestamp").innerText = new Date(Date.now());
 }
 
-document.getElementById("version").innerText = "Version: 1.02, Copyright For Broadcast Support Internal Use";
 setInterval(() => {
   loadData();
   timestamp();

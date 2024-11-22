@@ -23,6 +23,20 @@
     return $array;
    }
 
+   function rand_paslon_v2($total_paslon){
+    $max = 100;
+    $mean = $max/$total_paslon;
+    for($i=0;$i<$total_paslon;$i++){
+        $total = rand_float(10,$max-$mean);
+        $paslon[] = $total;
+        $sisa = $max - $total;
+        if($i == $total_paslon){
+            $paslon[] = $sisa;
+        }
+    }
+    return $paslon;
+   }
+
    function rand_partai(){
     $array = array();
     $sisa = 100;
@@ -205,80 +219,156 @@
     }
 
 
+    function getPilkanas(){
+        $simplexml= new SimpleXMLElement('<?xml version="1.0"?><root/>');
+        $propinsiArray = ["SUMATERA UTARA" => 2, "BANTEN" => 2, "DKI JAKARTA"=>3,"JAWA BARAT"=>4,"JAWA TENGAH"=>2,"JAWA TIMUR"=>3];
+        $data = $simplexml->addChild('data');
+        $data->addAttribute('type','list');
+        $indeksprov=1;
+        foreach($propinsiArray as $x => $y){
+            $paslon_data = rand_partai();
+            $item = $data->addChild('item');
+            $item->addAttribute('type','dict');
+            $item->addChild('nama_provinsi'.$indeksprov,$x)->addAttribute('type','string');
+            $paslon_data = rand_paslon_v2($y);
+            $i = 1;
+            foreach($paslon_data as $row){
+                $name = 'provinsi'.$indeksprov.'_paslon'.$i;
+                $item->addChild($name,$row)->addAttribute('type','float');
+                $i++;
+            }
+            $item->addChild('datamasuk_provinsi'.$indeksprov,rand_float(40,100))->addAttribute('type','float');
+            $item->addChild('tingkatpartisipasi_provinsi'.$indeksprov,rand_float(40,100))->addAttribute('type','float');
+            $indeksprov++;
+        }
+        $simplexml->addChild('created_at',date('Y-m-d H:i:s'))->addAttribute('type','str');
+        return $simplexml;
+    }
 
-   $survey1 = fopen('survey1/partai_nasional.xml', "w");
-   fwrite($survey1, getPartainas()->asXML());
+    function getPilkadaPerpropinsi($indexPropinsi, $data_masuk=null){
+        $simplexml= new SimpleXMLElement('<?xml version="1.0"?><root/>');
+        $propinsiArray = array("SUMATERA UTARA" => 2, "BANTEN" => 2, "DKI JAKARTA"=>3,"JAWA BARAT"=>4,"JAWA TENGAH"=>2,"JAWA TIMUR"=>3);
+        $data = $simplexml->addChild('data');
+        $data->addAttribute('type','list');
+            $paslon_data = rand_partai();
+            $item = $data->addChild('item');
+            $item->addAttribute('type','dict');
+            $item->addChild('nama_provinsi',get_array_indexName($indexPropinsi,$propinsiArray))->addAttribute('type','string');
+            $paslon_data = rand_paslon_v2(get_array_value($indexPropinsi,$propinsiArray));
+            $i = 1;
+            foreach($paslon_data as $row){
+                $name = 'paslon'.$i;
+                $item->addChild($name,$row)->addAttribute('type','float');
+                $i++;
+            }
+            $item->addChild('datamasuk'.get_array_value($indexPropinsi,$propinsiArray),rand_float(40,100))->addAttribute('type','float');
+            $item->addChild('tingkatpartisipasi'.get_array_value($indexPropinsi,$propinsiArray),rand_float(40,100))->addAttribute('type','float');
+        $simplexml->addChild('created_at',date('Y-m-d H:i:s'))->addAttribute('type','string');
+        return $simplexml;
+    }
+
+    function get_array_value($index,$array){
+        $i=0;
+        foreach ($array as $value) {
+            if($i==$index) {
+                return $value;
+            }
+            $i++;
+        }
+        // may be $index exceedes size of $array. In this case NULL is returned.
+        return "";
+    }
+    
+    function get_array_indexName($index,$array){
+        $i=0;
+        foreach ($array as $x => $y) {
+            if($i==$index) {
+                return $x;
+            }
+            $i++;
+        }
+        // may be $index exceedes size of $array. In this case NULL is returned.
+        return "";
+    }
+
+
+
+
+   $survey1 = fopen('survey1/pilkada_nasional.xml', "w");
+   fwrite($survey1, getPilkanas()->asXML());
    fclose($survey1);
-   
-   $survey2 = fopen('survey2/partai_nasional.xml', "w");
-   fwrite($survey2, getPartainas()->asXML());
+
+   $survey1 = fopen('survey1/sumut.xml', "w");
+   fwrite($survey1, getPilkadaPerpropinsi(0)->asXML());
+   fclose($survey1);
+
+   $survey1 = fopen('survey1/banten.xml', "w");
+   fwrite($survey1, getPilkadaPerpropinsi(1)->asXML());
+   fclose($survey1);
+
+   $survey1 = fopen('survey1/jakarta.xml', "w");
+   fwrite($survey1, getPilkadaPerpropinsi(2)->asXML());
+   fclose($survey1);
+
+   $survey1 = fopen('survey1/jabar.xml', "w");
+   fwrite($survey1, getPilkadaPerpropinsi(3)->asXML());
+   fclose($survey1);
+
+   $survey1 = fopen('survey1/jateng.xml', "w");
+   fwrite($survey1, getPilkadaPerpropinsi(4)->asXML());
+   fclose($survey1);
+
+   $survey1 = fopen('survey1/jatim.xml', "w");
+   fwrite($survey1, getPilkadaPerpropinsi(5)->asXML());
+   fclose($survey1);
+
+   $survey2 = fopen('survey2/pilkada_nasional.xml', "w");
+   fwrite($survey2, getPilkanas()->asXML());
    fclose($survey2);
-   
-   $survey3 = fopen('survey3/partai_nasional.xml', "w");
-   fwrite($survey3, getPartainas()->asXML());
+
+   $survey2 = fopen('survey2/banten.xml', "w");
+   fwrite($survey2, getPilkadaPerpropinsi(1)->asXML());
+   fclose($survey2);
+
+   $survey2 = fopen('survey2/jakarta.xml', "w");
+   fwrite($survey2, getPilkadaPerpropinsi(2)->asXML());
+   fclose($survey2);
+
+   $survey2 = fopen('survey2/jateng.xml', "w");
+   fwrite($survey2, getPilkadaPerpropinsi(4)->asXML());
+   fclose($survey2);
+
+   $survey2 = fopen('survey2/jatim.xml', "w");
+   fwrite($survey2, getPilkadaPerpropinsi(5)->asXML());
+   fclose($survey2);
+
+   $survey3 = fopen('survey3/pilkada_nasional.xml', "w");
+   fwrite($survey3, getPilkanas()->asXML());
+   fclose($survey3);
+
+   $survey3 = fopen('survey3/sumut.xml', "w");
+   fwrite($survey3, getPilkadaPerpropinsi(0)->asXML());
+   fclose($survey3);
+
+   $survey3 = fopen('survey3/banten.xml', "w");
+   fwrite($survey3, getPilkadaPerpropinsi(1)->asXML());
+   fclose($survey3);
+
+   $survey3 = fopen('survey3/jakarta.xml', "w");
+   fwrite($survey3, getPilkadaPerpropinsi(2)->asXML());
+   fclose($survey3);
+
+   $survey3 = fopen('survey3/jabar.xml', "w");
+   fwrite($survey3, getPilkadaPerpropinsi(3)->asXML());
+   fclose($survey3);
+
+   $survey3 = fopen('survey3/jateng.xml', "w");
+   fwrite($survey3, getPilkadaPerpropinsi(4)->asXML());
+   fclose($survey3);
+
+   $survey3 = fopen('survey3/jatim.xml', "w");
+   fwrite($survey3, getPilkadaPerpropinsi(5)->asXML());
    fclose($survey3);
    
-   $survey1 = fopen('survey1/pilpres_nasional.xml', "w");
-   fwrite($survey1, getPilpresnas()->asXML());
-   fclose($survey1);
-   
-  
-   $survey2 = fopen('survey2/pilpres_nasional.xml', "w");
-   fwrite($survey2, getPilpresnas()->asXML());
-   fclose($survey2);
-
-   $survey3 = fopen('survey3/pilpres_nasional.xml', "w");
-   fwrite($survey3, getPilpresnas()->asXML());
-   fclose($survey3);
-
-   $survey1 = fopen('survey1/pilpres_nasional_perprovinsi.xml', "w");
-   fwrite($survey1, getPilpresProvinsi()->asXML());
-   fclose($survey1);
-   
-  
-   $survey2 = fopen('survey2/pilpres_nasional_perprovinsi.xml', "w");
-   fwrite($survey2, getPilpresProvinsi()->asXML());
-   fclose($survey2);
-
-   $survey3 = fopen('survey3/pilpres_nasional_perprovinsi.xml', "w");
-   fwrite($survey3, getPilpresProvinsi()->asXML());
-   fclose($survey3);
-
-   $survey1 = fopen('survey1/partai_nasional_perprovinsi.xml', "w");
-   fwrite($survey1, getPartainaspron()->asXML());
-   fclose($survey1);
-  
-   $survey2 = fopen('survey2/partai_nasional_perprovinsi.xml', "w");
-   fwrite($survey2, getPartainaspron()->asXML());
-   fclose($survey2);
-
-   $survey3 = fopen('survey3/partai_nasional_perprovinsi.xml', "w");
-   fwrite($survey3, getPartainaspron()->asXML());
-   fclose($survey3);
-
-   $survey1 = fopen('survey1/partai_nasional_perzonasi.xml', "w");
-   fwrite($survey1, getPartainaszon()->asXML());
-   fclose($survey1);
-  
-   $survey2 = fopen('survey2/partai_nasional_perzonasi.xml', "w");
-   fwrite($survey2, getPartainaszon()->asXML());
-   fclose($survey2);
-
-   $survey3 = fopen('survey3/partai_nasional_perzonasi.xml', "w");
-   fwrite($survey3, getPartainaszon()->asXML());
-   fclose($survey3);
-
-   $survey1 = fopen('survey1/pilpres_nasional_perzonasi.xml', "w");
-   fwrite($survey1, getPilpreszon()->asXML());
-   fclose($survey1);
-  
-   $survey2 = fopen('survey2/pilpres_nasional_perzonasi.xml', "w");
-   fwrite($survey2, getPilpreszon()->asXML());
-   fclose($survey2);
-
-   $survey3 = fopen('survey3/pilpres_nasional_perzonasi.xml', "w");
-   fwrite($survey3, getPilpreszon()->asXML());
-   fclose($survey3);
-
    echo "Generate Success";
 ?>
